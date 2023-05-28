@@ -60,4 +60,4 @@ function Nav() {
   );
 }
 
-export default OffcanvasExample;
+export default Nav;
