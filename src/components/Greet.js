@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react'; // React needed for JSX
+//import React, { Component } from 'react'; // { Component } needed for class components
 
 /*
 *
@@ -7,10 +8,15 @@ import React, { Component } from 'react';
     2. Absence of 'this' keyword
     3. Solution without using state
     4. Mainly responsible for the UI
+
+    In 2018, Hooks allows for use of state and other React features without writing a class.
 *
 */
 
-const Greet = () => <h1>Hello Kevin, Bryce, and Ryan!</h1>;
+// const Greet = () => <h1>Hello Kevin, Bryce, and Ryan!</h1>;
+const Greet = () => {
+    return <h1>Hello Kevin, Bryce, and Ryan!</h1>;
+}
 
 /*
 *
