@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; //Component needed for class
 
 /*
-    Class Components (aka: stateful, dumb, container)
+    Class Components (aka: stateful, smart, container)
     1. More feature rich
     2. Maintain their own private data (state)
     3. Complex UI Logic

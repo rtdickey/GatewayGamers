@@ -4,7 +4,7 @@ import React from 'react'; // React needed for JSX
     Functional Components (aka: stateless, dumb, presentational)
     1. Use these as much as possible
     2. Absence of 'this' keyword
-    3. Solution without using state
+    3. Solution without using state - deprecated
     4. Mainly responsible for the UI
 
     In 2018, Hooks allows for use of state and other React features without writing a class.
