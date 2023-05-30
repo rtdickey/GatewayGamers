@@ -7,13 +7,14 @@ import Counter from './components/Counter';
 function App() {
   return (
     <>
-      {/* <Greet name="Kevin" heroName="Captain America">
+      <Greet name="Kevin" heroName="Captain America">
         <p>This is children props.</p>
       </Greet>
       <Greet name="Bryce" heroName="Spider-Man">
         <button>Action</button>
       </Greet>
-      <Greet name="Ryan" heroName="Black Panther"></Greet> */}
+      <Greet name="Ryan" heroName="Black Panther"></Greet>
+      <hr />
       {/* <Welcome name="Kevin" heroName="Captain America">
         <p>This is children props inside class component.</p>
       </Welcome>
