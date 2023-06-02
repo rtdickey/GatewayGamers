@@ -1,7 +1,12 @@
-import React, { Component } from 'react'
+import * as React from 'react'
+import { Component } from 'react';
+
+interface UserInterface {
+    count: number;
+}
 
 class Counter extends Component {
-    constructor(props) {
+    constructor(props: UserInterface) {
         super(props);
         this.state = {
             count: 0
@@ -21,9 +26,9 @@ class Counter extends Component {
         // });
         // console.log(this.state.count); //set state is asynchronous. callback example to show fix in decrement function
 
-        this.setState(prevState => ({
-            count: prevState.count + 1
-        }));
+        // this.setState(prevState => ({
+        //     count: prevState.count + 1
+        // }));
     }
     
     incrementFive() {
@@ -38,9 +43,9 @@ class Counter extends Component {
         // this.setState({
         //     count: this.state.count - 1
         // }, () => { console.log('Callback value', this.state.count)});
-        this.setState(prevState => ({
-            count: prevState.count - 1
-        }));
+        // this.setState(prevState => ({
+        //     count: prevState.count - 1
+        // }));
     }
 
     decrementFive() {
@@ -60,7 +65,7 @@ class Counter extends Component {
     render() {
         return (
             <div>
-                <div>Count: {this.state.count}</div>
+                {/* <div>Count: {this.state.count}</div> */}
                 <div>
                     <h3>Without Props</h3>
                     <button onClick={() => this.decrementFive()}>-5</button>
@@ -82,4 +87,4 @@ class Counter extends Component {
     }
 }
 
-export default Counter
+export {Counter}
