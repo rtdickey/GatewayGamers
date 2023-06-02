@@ -1,11 +1,8 @@
 import * as React from 'react';
-import {Counter} from './components/Counter';
 
 function App() {
   return (
-    <>
-      <Counter />
-    </>
+    <h1>Welcome to Gateway Gamers!</h1>
   )
 }
 
