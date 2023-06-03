@@ -1,0 +1,15 @@
+// required to get $orange variable
+@import "bootstrap/scss/functions"; 
+@import "bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+$gatewaygamers-blue: #1B4184;
+$gatewaygamers-orange: #FF9401;
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "primary": $gatewaygamers-blue,
+  "primary-alt": $gatewaygamers-orange
+));
+
+@import "bootstrap/scss/bootstrap.scss";
