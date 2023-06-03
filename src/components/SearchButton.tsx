@@ -30,7 +30,7 @@ function SearchButton({ name }: SearchButtonProps) {
     if (error) {
       setResults("Error.");
     }
-  }, [data, isLoading]);
+  }, [data, isLoading, error]);
 
   return (
     <Row>
