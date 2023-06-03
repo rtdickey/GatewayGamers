@@ -3,12 +3,16 @@ import "./scss/site.scss";
 import { ResponsiveNavbar } from "./components/ResponsiveNavbar";
 import { Container, Image } from "react-bootstrap";
 
-function App() {
+interface AppProps {
+  siteName: string;
+}
+
+function App({ siteName }: AppProps) {
   return (
     <>
-      <ResponsiveNavbar />
+      <ResponsiveNavbar siteName={siteName} />
       <Container>
-        <h1>Welcome to Gateway Gamers!</h1>
+        <h1>Welcome to {siteName}!</h1>
         <Image src="/logo192.png" rounded />
       </Container>
     </>

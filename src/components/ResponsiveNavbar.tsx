@@ -1,11 +1,15 @@
 import * as React from "react";
 import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
 
-function ResponsiveNavbar() {
+interface NavbarProps {
+  siteName: string;
+}
+
+function ResponsiveNavbar({ siteName }: NavbarProps) {
   return (
     <Navbar bg="primary" variant="dark" collapseOnSelect expand="sm">
       <Container>
-        <Navbar.Brand href="/">Gateway Gamers</Navbar.Brand>
+        <Navbar.Brand href="/">{siteName}</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-toggle" />
         <Navbar.Collapse id="navbar-toggle" role="">
           <Nav className="me-auto">
