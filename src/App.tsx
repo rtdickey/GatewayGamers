@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./scss/site.scss";
 import { ResponsiveNavbar } from "./components/ResponsiveNavbar";
-import { Row, Col, Container, Image } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import SearchButton from "./components/SearchButton";
 
 interface AppProps {
