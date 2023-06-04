@@ -6,14 +6,14 @@ import {
   BsStarFill,
   BsSquare,
   BsSquareFill,
-  BsSuitClub,
-  BsSuitClubFill,
-  BsSuitDiamond,
-  BsSuitDiamondFill,
-  BsSuitHeart,
-  BsSuitHeartFill,
-  BsSuitSpade,
-  BsSuitSpadeFill,
+  // BsSuitClub,
+  // BsSuitClubFill,
+  // BsSuitDiamond,
+  // BsSuitDiamondFill,
+  // BsSuitHeart,
+  // BsSuitHeartFill,
+  // BsSuitSpade,
+  // BsSuitSpadeFill,
 } from "react-icons/bs";
 import { GiSuits } from "react-icons/gi";
 

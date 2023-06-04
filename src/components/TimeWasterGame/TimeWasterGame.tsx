@@ -2,7 +2,6 @@ import { Card } from "react-bootstrap";
 import GameOptions from "./GameOptions";
 import Board from "./Board";
 import { useState } from "react";
-import { Color } from "react-bootstrap/esm/types";
 
 const TimeWasterGame = () => {
   type IconType = "heart" | "star" | "square" | "suit";
