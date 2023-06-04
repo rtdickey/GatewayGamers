@@ -1,7 +1,12 @@
 import * as React from "react";
-import { App } from "./App";
-
 import { createRoot } from "react-dom/client";
-const container = document.getElementById("app");
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<App siteName="Gateway Gamers" />);
+import App from "./App";
+import "./scss/site.scss";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

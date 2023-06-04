@@ -1,30 +1,12 @@
-import * as React from "react";
-import "./scss/site.scss";
-import { ResponsiveNavbar } from "./components/ResponsiveNavbar";
-import { Row, Col, Image } from "react-bootstrap";
-import SearchButton from "./components/SearchButton";
+import ResponsiveNavbar from "./components/ResponsiveNavbar";
 
-interface AppProps {
-  siteName: string;
-}
-
-function App({ siteName }: AppProps) {
+function App() {
   return (
     <>
-      <ResponsiveNavbar siteName={siteName} />
-      <Row>
-        <Col>
-          <Image src="/logo192.png" rounded />
-        </Col>
-        <Col>
-          <h1>Welcome to {siteName}!</h1>
-        </Col>
-      </Row>
-      <Row>
-        <SearchButton name="Search Games" />
-      </Row>
+      <ResponsiveNavbar />
+      <h1>Welcome to Gateway Gamers.</h1>
     </>
   );
 }
 
-export { App };
+export default App;
