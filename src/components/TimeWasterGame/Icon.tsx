@@ -16,9 +16,10 @@ import {
   // BsSuitSpadeFill,
 } from "react-icons/bs";
 import { GiSuits } from "react-icons/gi";
+import { IconType } from "./TimeWasterGame";
 
 interface Props {
-  type: "heart" | "star" | "square" | "suit";
+  type: IconType;
   color?: string;
   selectType?: (iconType: string) => void;
 }

@@ -3,10 +3,11 @@ import GameOptions from "./GameOptions";
 import Board from "./Board";
 import { useState } from "react";
 
+type IconType = "heart" | "star" | "square" | "suit";
+
 const TimeWasterGame = () => {
-  type IconType = "heart" | "star" | "square" | "suit";
   const [type, setType] = useState("heart");
-  const [color, setColor] = useState("pink");
+  const [color, setColor] = useState("red");
   const [numberOfPieces, setNumberOfPieces] = useState(10);
 
   const selectType = (iconType: string) => {
@@ -40,4 +41,5 @@ const TimeWasterGame = () => {
   );
 };
 
+export { IconType };
 export default TimeWasterGame;

@@ -1,16 +1,13 @@
 import Icon from "./Icon";
+import { IconType } from "./TimeWasterGame";
 
 interface Props {
-  type: "heart" | "star" | "square" | "suit";
+  type: IconType;
   color: string;
   numberOfGamePieces: number;
 }
 
-const Board = ({
-  type = "heart",
-  color = "pink",
-  numberOfGamePieces = 10,
-}: Props) => {
+const Board = ({ type, color, numberOfGamePieces }: Props) => {
   return (
     <>
       <div className="border border-5 border-info p-3 mt-4">
