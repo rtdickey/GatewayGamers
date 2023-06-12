@@ -1,7 +1,9 @@
 import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
+import { useAuth } from "./AuthContextProvider/AuthContextProvider";
 
 function ResponsiveNavbar() {
-  const authenticated = true;
+  const { user } = useAuth();
+  console.log(user);
   return (
     <Navbar bg="primary" variant="dark" collapseOnSelect expand="sm">
       <Container>
@@ -12,8 +14,8 @@ function ResponsiveNavbar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/About">About</Nav.Link>
             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
-            <Nav.Link href="/Login">Login</Nav.Link>
-            <Nav.Link href="/.auth/logout">Logout</Nav.Link>
+            {!user && <Nav.Link href="/Login">Login</Nav.Link>}
+            {user && <Nav.Link href="/.auth/logout">Logout</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
