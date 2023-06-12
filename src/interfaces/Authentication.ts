@@ -4,9 +4,3 @@ export interface User {
   userDetails: string;
   userRoles: string[];
 }
-
-export interface UserContext {
-  user: User;
-  login: (theUser: User) => void;
-  logout: () => void;
-}

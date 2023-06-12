@@ -1,10 +1,10 @@
 // based: on https://blog.logrocket.com/complete-guide-authentication-with-react-router-v6/
 import { ReactNode, createContext, useContext, useMemo } from "react";
 import { useLocalStorage } from "./useLocalStorage";
-import { UserContext, User } from "../../interfaces/Authentication";
+import { User } from "../../interfaces/Authentication";
 
 //Use example from https://stackoverflow.com/questions/65877884/how-to-fetch-data-and-store-in-react-context-api
-const AuthContext = createContext<UserContext>(null);
+const AuthContext = createContext(null);
 
 interface Props {
   children: ReactNode;
@@ -23,7 +23,7 @@ const AuthProvider = ({ children }: Props) => {
     setUser(null);
   };
 
-  const value: UserContext = useMemo(
+  const value = useMemo(
     () => ({
       user,
       login,

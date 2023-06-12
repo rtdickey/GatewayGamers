@@ -1,4 +1,4 @@
-import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { useAuth } from "./AuthContextProvider/AuthContextProvider";
 
 function ResponsiveNavbar() {
