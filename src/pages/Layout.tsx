@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
 import ResponsiveNavbar from "../components/ResponsiveNavbar";
+import Container from "react-bootstrap/esm/Container";
 
 const Layout = () => {
   return (
     <>
       <ResponsiveNavbar />
-      <Outlet />
+      <Container fluid>
+        <Outlet />
+      </Container>
     </>
   );
 };
