@@ -1,5 +1,5 @@
 // based: on https://blog.logrocket.com/complete-guide-authentication-with-react-router-v6/
-import { ReactNode, createContext, useContext, useMemo } from "react";
+import { ReactNode, createContext, useContext } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { User, AuthContextType } from "../../interfaces/Authentication";
 
