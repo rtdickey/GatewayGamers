@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function ResponsiveNavbar() {
   const auth = useAuth();
-  console.log(auth);
   return (
     <Navbar bg="primary" variant="dark" collapseOnSelect expand="sm">
       <Container>
@@ -12,17 +11,25 @@ function ResponsiveNavbar() {
         <Navbar.Toggle aria-controls="navbar-toggle" />
         <Navbar.Collapse id="navbar-toggle" role="">
           <Nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            {auth && <Link to="/dashboard">Dashboard</Link>}
-          </Nav>
-          <Nav>
-            {!auth && <Link to="/login">Login</Link>}
-            {auth && (
-              <Nav.Link href="/.auth/logout?post_logout_redirect_uri=http://localhost:4280/">
-                Logout
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+            {auth.user && (
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
               </Nav.Link>
             )}
+          </Nav>
+          <Nav>
+            {!auth.user && (
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+            )}
+            {auth.user && <Nav.Link href="/logout">Logout</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
