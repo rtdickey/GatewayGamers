@@ -19,8 +19,7 @@ const About = () => {
               Gateway Gamers was co-founded by Ryan Dickey and Charles Reed.
               Their mission was to bring fellowship through gaming. Charles
               focuses on keeping things manageable with small group activities.
-              Ryan loves to learn and teach board games. in an effort to have
-              fellowship and the ability to teach what they love to do.
+              Ryan loves to learn and teach board games.
             </p>
           </Container>
         </Col>
