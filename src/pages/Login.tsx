@@ -17,7 +17,7 @@ const Login = () => {
               variant="outline-dark"
               size="lg"
               as="a"
-              href="/.auth/login/github?post_login_redirect_uri=http://localhost:4280/success"
+              href="/.auth/login/github?post_login_redirect_uri=https://www.gatewaygamers.com/success"
             >
               <FaGithub size={20}></FaGithub> Login with Github
             </Button>
@@ -25,7 +25,7 @@ const Login = () => {
               variant="outline-dark"
               size="lg"
               as="a"
-              href="/.auth/login/twitter"
+              href="/.auth/login/twitter?post_login_redirect_uri=https://www.gatewaygamers.com/success"
             >
               <FaTwitter /> Login with Twitter
             </Button>

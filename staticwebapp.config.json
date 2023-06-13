@@ -1,8 +1,9 @@
 {
+    "trailingSlash": "auto",
     "routes": [{
         "route": "/logout",
-        "redirect": "/.auth/logout?post_logout_redirect_uri=http://localhost:4280/"
-      }],
+        "redirect": "/.auth/logout?post_logout_redirect_uri=https://www.gatewaygamers.com/"
+    }],
     "navigationFallback": {
         "rewrite": "/index.html"
     }
