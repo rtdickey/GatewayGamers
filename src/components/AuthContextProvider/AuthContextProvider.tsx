@@ -21,6 +21,7 @@ const AuthProvider = ({ children }: Props) => {
 
   // call this function to sign out logged in user
   const logout = (callback: VoidFunction) => {
+    console.log(user);
     setUser(null);
     callback();
   };

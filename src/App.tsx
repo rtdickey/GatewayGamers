@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Home, About, Login, Dashboard } from "./pages";
 import AuthContextProvider from "./components/AuthContextProvider";
+import Success from "./pages/Success";
+import LogoutSuccess from "./pages/LogoutSuccess";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="login" element={<Login />} />
+            <Route path="success" element={<Success />} />
+            <Route path="logout" element={<LogoutSuccess />} />
           </Route>
         </Routes>
       </BrowserRouter>

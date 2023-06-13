@@ -1,10 +1,8 @@
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import Banner from "../components/Banner";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
   return (
     <>
       <Row>
@@ -19,7 +17,7 @@ const Login = () => {
               variant="outline-dark"
               size="lg"
               as="a"
-              onClick={() => navigate("/.auth/login/github")} //href="/.auth/login/github"
+              href="/.auth/login/github?post_login_redirect_uri=http://localhost:4280/success"
             >
               <FaGithub size={20}></FaGithub> Login with Github
             </Button>

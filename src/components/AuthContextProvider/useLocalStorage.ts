@@ -9,7 +9,7 @@ export const useLocalStorage = (keyName: string, defaultValue: User) => {
         const user: User = JSON.parse(value);
         return user;
       } else {
-        window.localStorage.setItem(keyName, JSON.stringify(defaultValue));
+        //window.localStorage.setItem(keyName, JSON.stringify(defaultValue));
         return defaultValue;
       }
     } catch (err) {
@@ -19,7 +19,11 @@ export const useLocalStorage = (keyName: string, defaultValue: User) => {
 
   const setValue = (newValue: User) => {
     try {
-      window.localStorage.setItem(keyName, JSON.stringify(newValue));
+      if (newValue) {
+        window.localStorage.setItem(keyName, JSON.stringify(newValue));
+      } else {
+        window.localStorage.removeItem(keyName);
+      }
     } catch (err) {}
     setStoredValue(newValue);
   };

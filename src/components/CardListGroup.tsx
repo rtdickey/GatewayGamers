@@ -2,7 +2,7 @@ import { Card, ListGroup } from "react-bootstrap";
 
 interface Props {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   items: string[];
 }
 

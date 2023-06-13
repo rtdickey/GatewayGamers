@@ -1,3 +1,1 @@
-import AuthContextProvider from "./AuthContextProvider";
-
-export default AuthContextProvider;
+export { default, useAuth } from "./AuthContextProvider";
