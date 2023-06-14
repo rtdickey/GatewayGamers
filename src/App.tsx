@@ -7,7 +7,6 @@ import { useAuthenticate } from "./hooks/useAuthenticate";
 
 function App() {
   const [isAuthenicated, user] = useAuthenticate();
-  console.log(isAuthenicated, user);
   return (
     <AuthContextProvider>
       <BrowserRouter>
