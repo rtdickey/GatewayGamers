@@ -3,8 +3,11 @@ import { Layout, Home, About, Login, Dashboard } from "./pages";
 import AuthContextProvider from "./components/AuthContextProvider";
 import Success from "./pages/Success";
 import SuccessLogout from "./pages/SuccessLogout";
+import { useAuthenticate } from "./hooks/useAuthenticate";
 
 function App() {
+  const [isAuthenicated, user] = useAuthenticate();
+  console.log(isAuthenicated, user);
   return (
     <AuthContextProvider>
       <BrowserRouter>
