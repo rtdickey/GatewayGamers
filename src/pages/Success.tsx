@@ -2,17 +2,20 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/AuthContextProvider";
 
 const Success = () => {
-  const navigate = useNavigate();
   const auth = useAuth();
-  const verifyAndRedirect = async () => {
+  const navigate = useNavigate();
+  const handleLogin = async () => {
     const response = await fetch("/.auth/me");
     const jsonData = await response.json();
-    auth.login(jsonData, () => {
+    if (jsonData.clientPrincipal) {
+      auth.login(jsonData);
       navigate("/dashboard");
-    });
+    } else {
+      navigate("/login");
+    }
   };
-  verifyAndRedirect();
-  return <div>Success</div>;
+  handleLogin();
+  return <></>;
 };
 
 export default Success;

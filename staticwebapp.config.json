@@ -2,7 +2,7 @@
     "trailingSlash": "auto",
     "routes": [{
         "route": "/logout",
-        "redirect": "/.auth/logout?post_logout_redirect_uri=https://www.gatewaygamers.com/"
+        "redirect": "/.auth/logout?post_logout_redirect_uri=/successlogout"
     }],
     "navigationFallback": {
         "rewrite": "/index.html"

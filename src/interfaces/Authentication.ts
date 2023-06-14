@@ -7,6 +7,6 @@ export interface User {
 
 export interface AuthContextType {
   user: User;
-  login: (userInfo: any, callback: VoidFunction) => void;
-  logout: (callback: VoidFunction) => void;
+  login: (userInfo: any) => void;
+  logout: () => void;
 }

@@ -14,16 +14,13 @@ const AuthProvider = ({ children }: Props) => {
   const [user, setUser] = useLocalStorage("user", null);
 
   // call this function when you want to authenticate the user
-  const login = async (theUser: User, callback: VoidFunction) => {
+  const login = async (theUser: User) => {
     setUser(theUser);
-    callback();
   };
 
   // call this function to sign out logged in user
-  const logout = (callback: VoidFunction) => {
-    console.log(user);
+  const logout = () => {
     setUser(null);
-    callback();
   };
 
   const value = { user, login, logout };
