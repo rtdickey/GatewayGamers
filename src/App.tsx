@@ -3,10 +3,11 @@ import { Layout, Home, About, Login, Dashboard } from "./pages";
 import AuthContextProvider from "./components/AuthContextProvider";
 import Success from "./pages/Success";
 import SuccessLogout from "./pages/SuccessLogout";
-//import { useAuthenticate } from "./hooks/useAuthenticate";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile";
+import { useAuthenticate } from "./hooks/useAuthenticate";
 
 function App() {
-  //const [isAuthenicated, user] = useAuthenticate();
   return (
     <AuthContextProvider>
       <BrowserRouter>
@@ -14,7 +15,22 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route
+              path="dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
             <Route path="login" element={<Login />} />
             <Route path="success" element={<Success />} />
             <Route path="successlogout" element={<SuccessLogout />} />

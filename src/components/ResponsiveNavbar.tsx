@@ -1,9 +1,11 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useAuth } from "./AuthContextProvider/AuthContextProvider";
 import { Link } from "react-router-dom";
+import { useAuthenticate } from "../hooks/useAuthenticate";
+import { ClientPrincipalData } from "../interfaces/Authentication";
 
 function ResponsiveNavbar() {
-  const auth = useAuth();
+  const [isAuthenticated, user] = useAuthenticate();
+  const userName = isAuthenticated && (user as ClientPrincipalData).userDetails;
   return (
     <Navbar bg="primary" variant="dark" collapseOnSelect expand="sm">
       <Container>
@@ -17,19 +19,24 @@ function ResponsiveNavbar() {
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
-            {auth.user && (
+            {isAuthenticated && (
               <Nav.Link as={Link} to="/dashboard">
                 Dashboard
               </Nav.Link>
             )}
           </Nav>
           <Nav>
-            {!auth.user && (
+            {!isAuthenticated && (
               <Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
             )}
-            {auth.user && <Nav.Link href="/logout">Logout</Nav.Link>}
+            {isAuthenticated && userName && (
+              <Nav.Link as={Link} to="/profile">
+                {userName}
+              </Nav.Link>
+            )}
+            {isAuthenticated && <Nav.Link href="/logout">Logout</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
