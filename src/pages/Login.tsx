@@ -17,7 +17,7 @@ const Login = () => {
               variant="outline-dark"
               size="lg"
               as="a"
-              href="/.auth/login/github?post_login_redirect_uri=/success"
+              href="/.auth/login/github?post_login_redirect_uri=/dashboard"
             >
               <FaGithub size={20}></FaGithub> Login with Github
             </Button>
@@ -25,7 +25,7 @@ const Login = () => {
               variant="outline-dark"
               size="lg"
               as="a"
-              href="/.auth/login/twitter?post_login_redirect_uri=/success"
+              href="/.auth/login/twitter?post_login_redirect_uri=/dashboard"
             >
               <FaTwitter /> Login with Twitter
             </Button>

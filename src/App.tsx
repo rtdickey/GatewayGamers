@@ -1,18 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Home, About, Login, Dashboard } from "./pages";
-import Success from "./pages/Success";
-import SuccessLogout from "./pages/SuccessLogout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import { useDispatch } from "react-redux";
 import { useAuthenticate } from "./hooks/useAuthenticate";
 import { ClientPrincipalData } from "./interfaces/Authentication";
-import { setUser } from "./redux/slice/userSlice";
+import { setIsFetching, setUser } from "./redux/slice/userSlice";
+import { useEffect } from "react";
 
 function App() {
-  const [user] = useAuthenticate();
+  const { user, hasFetchedUser } = useAuthenticate();
   const dispatch = useDispatch();
-  dispatch(setUser(user as ClientPrincipalData));
+  useEffect(() => {
+    if (hasFetchedUser) {
+      dispatch(setUser(user as ClientPrincipalData));
+      dispatch(setIsFetching());
+    }
+  }, [dispatch, user, hasFetchedUser]);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -36,8 +41,6 @@ function App() {
             }
           />
           <Route path="login" element={<Login />} />
-          <Route path="success" element={<Success />} />
-          <Route path="successlogout" element={<SuccessLogout />} />
         </Route>
       </Routes>
     </BrowserRouter>

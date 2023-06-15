@@ -4,6 +4,8 @@ import { ClientPrincipalData } from "../interfaces/Authentication";
 export function useAuthenticate() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<ClientPrincipalData | null>(null);
+  const [hasFetchedUser, setHasFetchedUser] = useState(false);
+
   useEffect(() => {
     async function fetchUserAuthentication() {
       try {
@@ -13,10 +15,11 @@ export function useAuthenticate() {
         setUser(clientPrincipal);
         setIsAuthenticated(!!clientPrincipal);
       } catch (ex) {}
+      setHasFetchedUser(true);
     }
 
     fetchUserAuthentication();
   }, []);
 
-  return [isAuthenticated, user];
+  return { isAuthenticated, user, hasFetchedUser };
 }

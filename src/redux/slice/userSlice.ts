@@ -1,29 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import {
-  ClaimData,
-  ClientPrincipalData,
-} from "../../interfaces/Authentication";
+import { ClientPrincipalData } from "../../interfaces/Authentication";
 
 interface UserState {
-  clientPrincipal: {
-    identityProvider: string;
-    userId: string;
-    userDetails: string;
-    userRoles: string[];
-    claims: ClaimData[];
-  };
+  isFetching: boolean;
+  clientPrincipal?: ClientPrincipalData;
   isAuthenticated: boolean;
 }
 
 const initialState: UserState = {
-  clientPrincipal: {
-    identityProvider: "",
-    userId: "",
-    userDetails: "",
-    userRoles: [],
-    claims: [],
-  },
+  isFetching: true,
+  clientPrincipal: null,
   isAuthenticated: false,
 };
 
@@ -35,9 +22,12 @@ export const userSlice = createSlice({
       state.clientPrincipal = action.payload;
       state.isAuthenticated = !!action.payload;
     },
+    setIsFetching: (state) => {
+      state.isFetching = false;
+    },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, setIsFetching } = userSlice.actions;
 
 export default userSlice.reducer;
