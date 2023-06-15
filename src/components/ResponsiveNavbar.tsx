@@ -1,11 +1,12 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useAuthenticate } from "../hooks/useAuthenticate";
-import { ClientPrincipalData } from "../interfaces/Authentication";
+import { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 
 function ResponsiveNavbar() {
-  const [isAuthenticated, user] = useAuthenticate();
-  const userName = isAuthenticated && (user as ClientPrincipalData).userDetails;
+  const user = useSelector((state: RootState) => state.user.clientPrincipal);
+  const isAuthenticated = !!user;
+  const userName = user.userDetails;
   return (
     <Navbar bg="primary" variant="dark" collapseOnSelect expand="sm">
       <Container>
