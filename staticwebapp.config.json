@@ -2,7 +2,7 @@
     "trailingSlash": "auto",
     "routes": [{
         "route": "/logout",
-        "redirect": "/.auth/logout?post_logout_redirect_uri=/successlogout"
+        "redirect": "/.auth/logout?post_logout_redirect_uri=/"
     }],
     "navigationFallback": {
         "rewrite": "/index.html"
