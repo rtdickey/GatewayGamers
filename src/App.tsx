@@ -5,7 +5,6 @@ import Success from "./pages/Success";
 import SuccessLogout from "./pages/SuccessLogout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
-import { useAuthenticate } from "./hooks/useAuthenticate";
 
 function App() {
   return (
