@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout, Home, About, Login, Dashboard } from "./pages";
+import { Layout, Home, About, Login, Dashboard, Profile } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Profile from "./pages/Profile";
 import { useDispatch } from "react-redux";
 import { useAuthenticate } from "./hooks/useAuthenticate";
 import { ClientPrincipalData } from "./interfaces/Authentication";

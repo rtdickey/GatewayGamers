@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import Banner from "../components/Banner";
-import CardListGroup from "../components/CardListGroup";
+import Banner from "../../components/Banner";
+import CardListGroup from "../../components/CardListGroup";
 
 const Dashboard = () => {
   const loanedGames = [
