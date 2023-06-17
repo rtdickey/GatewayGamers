@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Banner from "../components/Banner";
 import CardListGroup from "../components/CardListGroup";
 
@@ -10,22 +10,14 @@ const Dashboard = () => {
   ];
   return (
     <>
-      <Row>
-        <Col>
-          <Banner />
-        </Col>
-      </Row>
-      <Row>
-        <Col></Col>
-        <Col></Col>
-        <Col>
-          <CardListGroup
-            title="Loaned Games"
-            subtitle="Remember where your games are..."
-            items={loanedGames}
-          />
-        </Col>
-      </Row>
+      <Banner />
+      <Container>
+        <CardListGroup
+          title="Loaned Games"
+          subtitle="Remember where your games are..."
+          items={loanedGames}
+        />
+      </Container>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { ReactNode } from "react";
 import { useAppSelector } from "../hooks/redux";
-import Loader from "./Loader";
+import FullPageLoader from "./FullPageLoader";
 
 interface Props {
   children: ReactNode;
@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }: Props) => {
   const isFetching = useAppSelector((state) => state.user.isFetching);
   const location = useLocation();
   if (isFetching) {
-    return <Loader />;
+    return <FullPageLoader />;
   }
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;
