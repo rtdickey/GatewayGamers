@@ -1,6 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import Banner from "../components/Banner";
 import CardListGroup from "../components/CardListGroup";
+import FullPageLoader from "../components/FullPageLoader";
 
 const Home = () => {
   const trendyGames = [""];
