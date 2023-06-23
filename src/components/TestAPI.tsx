@@ -5,13 +5,13 @@ const TestAPI = () => {
 
   useEffect(() => {
     let ignore = false;
-    fetch("/api/BoardGameAPI")
+    fetch("/api/BoardGameAPI?name=Kevin")
       .then((response) => response.json())
       .then((data) => {
         if (!ignore) {
           try {
-            console.log("respond data?", data);
-            setResult(data);
+            console.log("respond data?", data.message);
+            setResult(data.message);
           } catch (error) {
             console.log("Error happened here!");
             console.error(error);
@@ -23,22 +23,7 @@ const TestAPI = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   (async function () {
-  //     await fetch(`/api/BoardGameAPI`).then(async (response) => {
-  //       try {
-  //         const { body } = await response.json();
-  //         console.log("respond data?", body);
-  //         setData(body);
-  //       } catch (error) {
-  //         console.log("Error happened here!");
-  //         console.error(error);
-  //       }
-  //     });
-  //   })();
-  // }, []);
-
-  return <div>{result}</div>;
+  return <div>{result}</div>; //<div>{result}</div>;
 };
 
 export default TestAPI;
