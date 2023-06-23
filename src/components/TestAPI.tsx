@@ -5,8 +5,11 @@ const TestAPI = () => {
 
   useEffect(() => {
     (async function () {
-      const { text } = await (await fetch(`/api/BoardGameAPI`)).json();
-      setData(text);
+      const { body } = await (await fetch(`/api/BoardGameAPI`)).json();
+      //console.log(response);
+      //const resJson = await response.json();
+      //console.log(resJson);
+      setData(body);
     })();
   });
 
