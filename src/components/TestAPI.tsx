@@ -1,19 +1,44 @@
 import { useEffect, useState } from "react";
 
 const TestAPI = () => {
-  const [data, setData] = useState("");
+  const [result, setResult] = useState("");
 
   useEffect(() => {
-    (async function () {
-      const { body } = await (await fetch(`/api/BoardGameAPI`)).json();
-      //console.log(response);
-      //const resJson = await response.json();
-      //console.log(resJson);
-      setData(body);
-    })();
-  });
+    let ignore = false;
+    fetch("/api/BoardGameAPI")
+      .then((response) => response.json())
+      .then((data) => {
+        if (!ignore) {
+          try {
+            console.log("respond data?", data);
+            setResult(data);
+          } catch (error) {
+            console.log("Error happened here!");
+            console.error(error);
+          }
+        }
+      });
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
-  return <div>{data}</div>;
+  // useEffect(() => {
+  //   (async function () {
+  //     await fetch(`/api/BoardGameAPI`).then(async (response) => {
+  //       try {
+  //         const { body } = await response.json();
+  //         console.log("respond data?", body);
+  //         setData(body);
+  //       } catch (error) {
+  //         console.log("Error happened here!");
+  //         console.error(error);
+  //       }
+  //     });
+  //   })();
+  // }, []);
+
+  return <div>{result}</div>;
 };
 
 export default TestAPI;
