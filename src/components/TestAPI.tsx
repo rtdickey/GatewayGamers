@@ -5,7 +5,7 @@ const TestAPI = () => {
 
   useEffect(() => {
     let ignore = false;
-    fetch("/api/BoardGameAPI?name=Kevin")
+    fetch("/api/BoardGameAPI?search=Kevin")
       .then((response) => response.json())
       .then((data) => {
         if (!ignore) {
