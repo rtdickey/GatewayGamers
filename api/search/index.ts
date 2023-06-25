@@ -12,9 +12,18 @@ const httpTrigger: AzureFunction = async function (
     attributeNamePrefix: "",
   };
   const parser = new XMLParser(options);
+  const searchParameter = req.query.search;
+  if (!searchParameter) {
+    context.res = {
+      status: 200,
+      body: {},
+    };
+    return;
+  }
+  
   const responseXml = await (
     await fetch(
-      `https://api.geekdo.com/xmlapi2/search?query=${req.query.search}&type=boardgame`
+      `https://api.geekdo.com/xmlapi2/search?query=${searchParameter}&type=boardgame`
     )
   ).text();
   context.log(responseXml);
@@ -23,7 +32,7 @@ const httpTrigger: AzureFunction = async function (
 
   context.res = {
     status: 200,
-    body: response.items.item,
+    body: response.items.item ? response.items.item : [],
   };
 };
 
