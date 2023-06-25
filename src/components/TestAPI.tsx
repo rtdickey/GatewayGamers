@@ -10,8 +10,8 @@ const TestAPI = () => {
       .then((data) => {
         if (!ignore) {
           try {
-            console.log("respond data?", data.message);
-            setResult(data.message);
+            console.log("respond data?", JSON.stringify(data));
+            setResult(JSON.stringify(data));
           } catch (error) {
             console.log("Error happened here!");
             console.error(error);
