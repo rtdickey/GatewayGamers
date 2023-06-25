@@ -11,7 +11,7 @@ const Banner = ({ children }: Props) => {
     : "p-2 mb-3 bg-primary-alt";
   return (
     <div className={classes}>
-      <Container>{children}</Container>
+      {children && <Container>{children}</Container>}
     </div>
   );
 };
