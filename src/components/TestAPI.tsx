@@ -5,13 +5,13 @@ const TestAPI = () => {
 
   useEffect(() => {
     let ignore = false;
-    fetch("/api/BoardGameAPI?name=Kevin")
+    fetch("/api/BoardGameAPI?search=Kevin")
       .then((response) => response.json())
       .then((data) => {
         if (!ignore) {
           try {
-            console.log("respond data?", data.message);
-            setResult(data.message);
+            console.log("respond data?", JSON.stringify(data));
+            setResult(JSON.stringify(data));
           } catch (error) {
             console.log("Error happened here!");
             console.error(error);
