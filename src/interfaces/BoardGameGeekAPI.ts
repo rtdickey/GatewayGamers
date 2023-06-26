@@ -16,3 +16,17 @@ export interface GameSearchResponse {
   type: string;
   id: string;
 }
+
+export interface HotResponse {
+  thumbnail: {
+    value: string;
+  };
+  name: {
+    value: string;
+  };
+  yearpublished: {
+    value: string;
+  };
+  id: string;
+  rank: string;
+}

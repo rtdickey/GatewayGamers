@@ -1,8 +1,7 @@
-//import { useEffect, useState } from "react";
 import { useSearchGamesByNameQuery } from "../redux/services/gameSearch";
 
 const TestAPI = () => {
-  const { data, error, isLoading } = useSearchGamesByNameQuery("Space");
+  const { data, error, isLoading } = useSearchGamesByNameQuery("Kevin");
 
   return (
     <div>
