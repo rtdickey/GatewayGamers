@@ -1,10 +1,8 @@
 import { Container } from "react-bootstrap";
 import Banner from "../components/Banner";
-import CardListGroup from "../components/CardListGroup";
-import TestAPI from "../components/TestAPI";
+import HotGamesListGroup from "../components/HotGamesListGroup";
 
 const Home = () => {
-  const trendyGames = [""];
   return (
     <>
       <Banner>
@@ -15,12 +13,7 @@ const Home = () => {
         </p>
       </Banner>
       <Container>
-        <CardListGroup
-          title="The Hotness"
-          subtitle="The top 5 trending games of today"
-          items={trendyGames}
-        />
-        <TestAPI />
+        <HotGamesListGroup />
       </Container>
     </>
   );
