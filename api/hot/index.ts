@@ -1,6 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { XMLParser } from "fast-xml-parser";
-import fetch from "node-fetch";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -22,7 +21,7 @@ const httpTrigger: AzureFunction = async function (
 
   context.res = {
     status: 200,
-    body: response.items.item ? response.items.item : [],
+    body: response.items?.item ?? [],
   };
 };
 
