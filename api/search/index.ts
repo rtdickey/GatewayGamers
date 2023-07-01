@@ -20,7 +20,7 @@ const httpTrigger: AzureFunction = async function (
     };
     return;
   }
-  
+
   const responseXml = await (
     await fetch(
       `https://api.geekdo.com/xmlapi2/search?query=${searchParameter}&type=boardgame`
