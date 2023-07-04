@@ -7,7 +7,6 @@ interface Props {
 }
 
 const GameSearchList = ({ items }: Props) => {
-  console.log(items);
   if (items.length == 0) return <></>;
   return (
     <ListGroup>

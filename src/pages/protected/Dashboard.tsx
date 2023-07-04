@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [searchResult, setSearchResult] = useState("Kevin");
 
   const handleOnSubmit = (value: string) => {
-    console.log("We are on dashboard with value: ", value);
+    setSearchResult(value);
   };
 
   const { data, error, isLoading } = useSearchGamesByNameQuery(searchResult);
