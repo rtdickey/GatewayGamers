@@ -4,9 +4,10 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 const Login = () => {
   return (
     <>
-      <Row>
-        <Col sm={6}>
+      <Row className="mt-3 d-flex align-items-center">
+        <Col sm={6} className="">
           <Stack gap={2} className="col-md-5 mx-auto">
+            <h1 className="text-center">Sign In Options</h1>
             <Button
               variant="outline-primary"
               size="lg"
@@ -27,7 +28,9 @@ const Login = () => {
             </Button>
           </Stack>
         </Col>
-        <Col sm={6} className="d-none d-sm-block bg-primary-alt"></Col>
+        <Col sm={6} className="d-none d-sm-block">
+          <img src="/logo512.png" alt="Gateway Gamers logo" />
+        </Col>
       </Row>
     </>
   );
