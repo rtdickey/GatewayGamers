@@ -1,4 +1,4 @@
-import HotGamesListGroup from "../components/HotGamesListGroup";
+import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
 
 const Home = () => {
   return (
