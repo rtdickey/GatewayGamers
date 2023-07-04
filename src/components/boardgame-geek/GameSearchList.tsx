@@ -7,7 +7,7 @@ interface Props {
 }
 
 const GameSearchList = ({ items }: Props) => {
-  if (items.length == 0) return <></>;
+  if (Object.keys(items).length === 0) return <></>;
   return (
     <ListGroup>
       {items.map((item: GameSearchResponse, index: number) => (
@@ -15,7 +15,6 @@ const GameSearchList = ({ items }: Props) => {
           {item.name.value}
           <button
             type="button"
-            role="button"
             className="btn btn-outline-secondary"
             onClick={() => console.log(item.id + ": " + item.name.value)}
           >

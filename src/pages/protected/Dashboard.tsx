@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import {
   GameSearchForm,
@@ -7,12 +7,11 @@ import {
 import { useSearchGamesByNameQuery } from "../../redux/services/gameSearch";
 
 const Dashboard = () => {
-  const [searchResult, setSearchResult] = useState("Kevin");
+  const [searchResult, setSearchResult] = useState("");
 
   const handleOnSubmit = (value: string) => {
     setSearchResult(value);
   };
-
   const { data, error, isLoading } = useSearchGamesByNameQuery(searchResult);
 
   return (
@@ -24,13 +23,14 @@ const Dashboard = () => {
             <GameSearchForm onSubmit={handleOnSubmit} />
           </div>
           <div>
-            {error ? (
-              <p className="text-danger">Error retrieivng games.</p>
-            ) : isLoading ? (
-              <p>Retrieivng games.</p>
-            ) : data ? (
-              <GameSearchList items={data} />
-            ) : null}
+            {searchResult.length > 0 &&
+              (error ? (
+                <p className="text-danger">Error retrieivng games.</p>
+              ) : isLoading ? (
+                <p>Retrieivng games.</p>
+              ) : data ? (
+                <GameSearchList items={data} />
+              ) : null)}
           </div>
         </Col>
         <Col sm={3}></Col>
