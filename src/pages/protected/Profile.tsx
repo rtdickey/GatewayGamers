@@ -1,5 +1,4 @@
 import { Col, Row } from "react-bootstrap";
-import Banner from "../../components/Banner";
 
 const Profile = () => {
   return (

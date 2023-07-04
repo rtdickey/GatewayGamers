@@ -1,6 +1,3 @@
-import { Container } from "react-bootstrap";
-import Banner from "../components/Banner";
-
 const About = () => {
   return (
     <>

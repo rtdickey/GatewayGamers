@@ -1,5 +1,3 @@
-import { Container } from "react-bootstrap";
-import Banner from "../components/Banner";
 import HotGamesListGroup from "../components/HotGamesListGroup";
 
 const Home = () => {
