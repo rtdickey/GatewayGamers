@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Home, About, Login, Dashboard, Profile } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { useDispatch } from "react-redux";
 import { useAuthenticate } from "./hooks/useAuthenticate";
 import { ClientPrincipalData } from "./interfaces/Authentication";
 import { setIsFetching, setUser } from "./redux/slice/userSlice";
 import { useEffect } from "react";
+import { useAppDispatch } from "./hooks/redux";
 
 function App() {
   const { user, hasFetchedUser } = useAuthenticate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (hasFetchedUser) {
       dispatch(setUser(user as ClientPrincipalData));
