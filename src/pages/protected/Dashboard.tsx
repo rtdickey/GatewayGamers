@@ -1,13 +1,16 @@
-import { Container } from "react-bootstrap";
-import Banner from "../../components/Banner";
+import { Col, Row } from "react-bootstrap";
+import GameSearchForm from "../../components/GameSearchForm";
 
-const Dashboard = () => {
-  return (
-    <>
-      <Banner />
-      <Container>Dashboard Page</Container>
-    </>
-  );
-};
+const Dashboard = () => (
+  <>
+    <Row>
+      <Col sm={3}></Col>
+      <Col sm={6}>
+        <GameSearchForm />
+      </Col>
+      <Col sm={3}></Col>
+    </Row>
+  </>
+);
 
 export default Dashboard;
