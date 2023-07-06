@@ -1,27 +1,24 @@
 import httpTrigger from "./index";
 import { describe, expect, test, beforeEach } from "@jest/globals";
 import { Context, HttpRequest } from "@azure/functions";
+import axios from "axios";
+import * as MockAdapter from "axios-mock-adapter";
 
 describe("Hot", () => {
   let context: Context;
   let request: HttpRequest;
-
+  let mock = new MockAdapter(axios);
   let xmlResponse: string;
 
-  global.fetch = jest.fn(() => {
-    return Promise.resolve({
-      text: () => Promise.resolve(xmlResponse),
-    });
-  }) as jest.Mock;
-
   beforeEach(() => {
-    // Really crude and unsafe implementations that will be replaced soon
     context = { log: () => {} } as Context;
     request = { query: {} } as HttpRequest;
+    mock.reset();
   });
 
   test("empty hot items", async () => {
     xmlResponse = "<items></items>";
+    mock.onGet().reply(200, xmlResponse);
     await httpTrigger(context, request);
 
     expect(context.res.status).toEqual(200);
@@ -59,10 +56,18 @@ describe("Hot", () => {
       rank: "1",
     };
 
+    mock.onGet().reply(200, xmlResponse);
     await httpTrigger(context, request);
 
     expect(context.res.status).toEqual(200);
     expect(context.res.body).toHaveLength(2);
     expect(context.res.body[0]).toMatchObject(expectedHotItem);
+  });
+
+  test("running hot items with an connection error", async () => {
+    mock.onGet().networkError();
+    await httpTrigger(context, request);
+    console.log(context.res.body);
+    expect(context.res.status).toEqual(500);
   });
 });
