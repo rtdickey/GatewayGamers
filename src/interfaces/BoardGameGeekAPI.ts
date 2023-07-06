@@ -6,6 +6,7 @@
 //     "id": "291540"
 // }
 export interface GameSearchResponse {
+  id: string;
   name: {
     type: string;
     value: string;
@@ -14,7 +15,23 @@ export interface GameSearchResponse {
     value: string;
   };
   type: string;
+}
+
+export interface DetailedGameSearchResponse {
   id: string;
+  name: {
+    type: string;
+    value: string;
+  };
+  yearPublished: {
+    value: string;
+  };
+  type: string;
+  thumbnail: string;
+  image: string;
+  description: string;
+  minplayers: string;
+  maxplayers: string;
 }
 
 export interface HotResponse {

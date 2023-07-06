@@ -26,9 +26,9 @@ const httpTrigger: AzureFunction = async function (
       `https://api.geekdo.com/xmlapi2/search?query=${searchParameter}&type=boardgame`
     )
   ).text();
-  context.log(responseXml);
+  // context.log(responseXml);
   const response = parser.parse(responseXml);
-  context.log(response.items.item);
+  // context.log(response.items.item);
 
   context.res = {
     status: 200,

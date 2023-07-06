@@ -16,9 +16,9 @@ const httpTrigger: AzureFunction = async function (
   const responseXml = await (
     await fetch(`https://api.geekdo.com/xmlapi2/hot`)
   ).text();
-  context.log(responseXml);
+  // context.log(responseXml);
   const response = parser.parse(responseXml);
-  context.log(response);
+  // context.log(response);
 
   context.res = {
     status: 200,
