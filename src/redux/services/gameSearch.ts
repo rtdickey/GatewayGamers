@@ -8,7 +8,11 @@ export const gameSearchAPI = createApi({
     searchGamesByName: builder.query<GameSearchResponse[], string>({
       query: (search: string) => `search?search=${search}`,
     }),
+    searchGames: builder.mutation({
+      query: (search: string) => `search?search=${search}`,
+    }),
   }),
 });
 
-export const { useSearchGamesByNameQuery } = gameSearchAPI;
+export const { useSearchGamesByNameQuery, useSearchGamesMutation } =
+  gameSearchAPI;

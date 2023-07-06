@@ -1,15 +1,19 @@
-import { useState } from "react";
-import { useSearchGamesByNameQuery } from "../../redux/services/gameSearch";
+import { useSearchGamesMutation } from "../../redux/services/gameSearch";
 import GameSearchForm from "./GameSearchForm";
 import GameSearchList from "./GameSearchList";
 
 const GameSearch = () => {
-  const [searchResult, setSearchResult] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
+
+  const [searchGames, { data, error, isLoading }] = useSearchGamesMutation();
 
   const handleOnSubmit = (value: string) => {
-    setSearchResult(value);
+    // setSearchTerm(value);
+    searchGames(value);
   };
-  const { data, error, isLoading } = useSearchGamesByNameQuery(searchResult);
+
+  //useEffect(() => {}, [searchTerm]);
+  //const { data, error, isLoading } = useSearchGamesByNameQuery(searchResult);
 
   return (
     <>
@@ -17,14 +21,13 @@ const GameSearch = () => {
         <GameSearchForm onSubmit={handleOnSubmit} />
       </div>
       <div>
-        {searchResult.length > 0 &&
-          (error ? (
-            <p className="text-danger">Error retrieivng games.</p>
-          ) : isLoading ? (
-            <p>Retrieivng games.</p>
-          ) : data ? (
-            <GameSearchList items={data} />
-          ) : null)}
+        {error ? (
+          <p className="text-danger">Error retrieivng games.</p>
+        ) : isLoading ? (
+          <p>Retrieivng games.</p>
+        ) : data ? (
+          <GameSearchList items={data} />
+        ) : null}
       </div>
     </>
   );
