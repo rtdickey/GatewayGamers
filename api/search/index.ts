@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { XMLParser } from "fast-xml-parser";
-import fetch from "node-fetch";
+import axios from "axios";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -21,19 +21,22 @@ const httpTrigger: AzureFunction = async function (
     return;
   }
 
-  const responseXml = await (
-    await fetch(
+  try {
+    const responseXml = await axios.get(
       `https://api.geekdo.com/xmlapi2/search?query=${searchParameter}&type=boardgame`
-    )
-  ).text();
-  // context.log(responseXml);
-  const response = parser.parse(responseXml);
-  // context.log(response.items.item);
-
-  context.res = {
-    status: 200,
-    body: response.items.item ? response.items.item : [],
-  };
+    );
+    const response = parser.parse(responseXml.data);
+    context.res = {
+      status: 200,
+      body: response.items.item ? response.items.item : [],
+    };
+  } catch (error) {
+    console.error(error);
+    context.res = {
+      status: 500,
+      body: error,
+    };
+  }
 };
 
 export default httpTrigger;
