@@ -3,17 +3,11 @@ import GameSearchForm from "./GameSearchForm";
 import GameSearchList from "./GameSearchList";
 
 const GameSearch = () => {
-  // const [searchTerm, setSearchTerm] = useState("");
-
   const [searchGames, { data, error, isLoading }] = useSearchGamesMutation();
 
   const handleOnSubmit = (value: string) => {
-    // setSearchTerm(value);
     searchGames(value);
   };
-
-  //useEffect(() => {}, [searchTerm]);
-  //const { data, error, isLoading } = useSearchGamesByNameQuery(searchResult);
 
   return (
     <>
