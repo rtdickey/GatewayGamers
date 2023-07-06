@@ -21,9 +21,10 @@ const httpTrigger: AzureFunction = async function (
     return;
   }
 
+  // 1543,5256,1542
   const responseXml = await (
     await fetch(
-      `https://api.geekdo.com/xmlapi2/search?query=${searchParameter}&type=boardgame`
+      `https://api.geekdo.com/xmlapi2/thing?id=${searchParameter}&type=boardgame`
     )
   ).text();
   // context.log(responseXml);

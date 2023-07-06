@@ -1,16 +1,18 @@
 import { Col, Row } from "react-bootstrap";
-import GameSearchForm from "../../components/GameSearchForm";
+import GameSearch from "../../components/boardgame-geek/GameSearch";
 
-const Dashboard = () => (
-  <>
-    <Row>
-      <Col sm={3}></Col>
-      <Col sm={6}>
-        <GameSearchForm />
-      </Col>
-      <Col sm={3}></Col>
-    </Row>
-  </>
-);
+const Dashboard = () => {
+  return (
+    <>
+      <Row>
+        <Col sm={3}></Col>
+        <Col sm={6}>
+          <GameSearch />
+        </Col>
+        <Col sm={3}></Col>
+      </Row>
+    </>
+  );
+};
 
 export default Dashboard;

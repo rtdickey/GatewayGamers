@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Button, Form, Stack } from "react-bootstrap";
 
-const GameSearchForm = () => {
+interface Props {
+  onSubmit: (data: string) => void;
+}
+
+const GameSearchForm = ({ onSubmit }: Props) => {
   const [value, setValue] = useState("");
 
   const handleOnChange: React.ChangeEventHandler = (e) => {
@@ -11,7 +15,7 @@ const GameSearchForm = () => {
 
   const handleOnSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
-    console.log(value);
+    onSubmit(value);
   };
 
   const handleResetOnClick: React.MouseEventHandler = (e) => {

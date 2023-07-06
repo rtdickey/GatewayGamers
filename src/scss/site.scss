@@ -13,3 +13,11 @@ $theme-colors: map-merge($theme-colors, (
 ));
 
 @import "bootstrap/scss/bootstrap.scss";
+
+html, body {
+  height: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}

@@ -1,5 +1,6 @@
 import { Card, ListGroup } from "react-bootstrap";
-import { useGetHotnessQuery } from "../redux/services/getHotness";
+import { useGetHotnessQuery } from "../../redux/services/getHotness";
+import { HotResponse } from "../../interfaces/BoardGameGeekAPI";
 
 const HotGamesListGroup = () => {
   const { data, error, isLoading } = useGetHotnessQuery();
@@ -21,7 +22,7 @@ const HotGamesListGroup = () => {
             <span className="font-italic">Searching Hottest Games...</span>
           </ListGroup.Item>
         ) : data ? (
-          data.map((game) => (
+          data.map((game: HotResponse) => (
             <ListGroup.Item key={game.id}>
               <img
                 src={game.thumbnail.value}

@@ -1,5 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { GameSearchResponse } from "../../interfaces/BoardGameGeekAPI";
+import type {
+  DetailedGameSearchResponse,
+  GameSearchResponse,
+} from "../../interfaces/BoardGameGeekAPI";
 
 export const gameSearchAPI = createApi({
   reducerPath: "gameSearchAPI",
@@ -8,7 +11,20 @@ export const gameSearchAPI = createApi({
     searchGamesByName: builder.query<GameSearchResponse[], string>({
       query: (search: string) => `search?search=${search}`,
     }),
+    searchGames: builder.mutation({
+      query: (search: string) => `search?search=${search}`,
+    }),
+    searchDetailedGameInfoByName: builder.query<
+      DetailedGameSearchResponse[],
+      string
+    >({
+      query: (gameIds: string) => `thing?id=${gameIds}&type=boardgame`,
+    }),
   }),
 });
 
-export const { useSearchGamesByNameQuery } = gameSearchAPI;
+export const {
+  useSearchGamesByNameQuery,
+  useSearchGamesMutation,
+  useSearchDetailedGameInfoByNameQuery,
+} = gameSearchAPI;
