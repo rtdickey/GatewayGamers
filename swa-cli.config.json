@@ -4,6 +4,7 @@
     "gateway-gamers": {
       "appLocation": ".",
       "apiLocation": "api",
+      "dataApiLocation": "swa-db-connections",
       "outputLocation": "build",
       "appBuildCommand": "npm run build",
       "run": "npm start",
