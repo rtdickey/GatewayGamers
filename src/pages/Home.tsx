@@ -1,29 +1,12 @@
 import { Col, Row } from "react-bootstrap";
 import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
+import GetPerson from "../components/graphql-examples/GetPerson";
+import ListPeople from "../components/graphql-examples/ListPeople";
+import UpdatePerson from "../components/graphql-examples/UpdatePerson";
+import CreatePerson from "../components/graphql-examples/CreatePerson";
+import DeletePerson from "../components/graphql-examples/DeletePerson";
 
 const Home = () => {
-  const list = async function () {
-    const query = `
-        {
-          people {
-            items {
-              id
-              Name
-            }
-          }
-        }`;
-
-    const endpoint = "/data-api/graphql";
-    const result = await (
-      await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: query }),
-      })
-    ).json();
-    console.table(result.data.people.items);
-  };
-
   return (
     <>
       <h1>Welcome to Gateway Gamers</h1>
@@ -37,21 +20,11 @@ const Home = () => {
             <HotGamesListGroup />
           </Col>
           <Col>
-            <button id="list" onClick={() => list()}>
-              List
-            </button>
-            {/* <button id="get" onClick={() => get()}>
-              Get
-            </button>
-            <button id="update" onClick={() => update()}>
-              Update
-            </button>
-            <button id="create" onClick={() => create()}>
-              Create
-            </button>
-            <button id="delete" onClick={() => del()}>
-              Delete
-            </button> */}
+            <ListPeople />
+            <GetPerson />
+            <UpdatePerson />
+            <CreatePerson />
+            <DeletePerson />
           </Col>
         </Row>
       </div>
