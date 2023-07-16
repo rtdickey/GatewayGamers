@@ -18,7 +18,7 @@ const GameSearch = () => {
         {error ? (
           <p className="text-danger">Error retrieivng games.</p>
         ) : isLoading ? (
-          <p>Retrieivng games.</p>
+          <p>Retrieving games.</p>
         ) : data ? (
           <GameSearchList items={data} />
         ) : null}
