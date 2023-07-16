@@ -19,13 +19,6 @@ const Home = () => {
           <Col>
             <HotGamesListGroup />
           </Col>
-          <Col>
-            <ListPeople />
-            <GetPerson />
-            <UpdatePerson />
-            <CreatePerson />
-            <DeletePerson />
-          </Col>
         </Row>
       </div>
     </>
