@@ -1,12 +1,13 @@
 const GetPerson = () => {
   const get = async () => {
-    const id = "1";
+    const id = "2";
 
     const gql = `
             query getById($id: ID!) {
-              person_by_pk(id: $id) {
+              user_by_pk(id: $id) {
                 id
-                Name
+                userDetails
+                identityProvider
               }
             }`;
 
@@ -24,7 +25,7 @@ const GetPerson = () => {
       body: JSON.stringify(query),
     });
     const result = await response.json();
-    console.table(result.data.person_by_pk);
+    console.table(result.data.user_by_pk);
   };
 
   return (

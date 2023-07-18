@@ -1,16 +1,19 @@
 const UpdatePerson = () => {
   const update = async () => {
-    const id = "1";
+    const id = "2";
+    const identityProvider = "google";
     const data = {
       id: id,
-      Name: "Bryce",
+      userDetails: "kevinrs",
+      identityProvider: identityProvider,
     };
 
     const gql = `
-          mutation update($id: ID!, $_partitionKeyValue: String!, $item: UpdatePersonInput!) {
-            updatePerson(id: $id, _partitionKeyValue: $_partitionKeyValue, item: $item) {
+          mutation update($id: ID!, $_partitionKeyValue: String!, $item: UpdateUserInput!) {
+            updateUser(id: $id, _partitionKeyValue: $_partitionKeyValue, item: $item) {
               id
-              Name
+              userDetails
+              identityProvider
             }
           }`;
 
@@ -18,7 +21,7 @@ const UpdatePerson = () => {
       query: gql,
       variables: {
         id: id,
-        _partitionKeyValue: id,
+        _partitionKeyValue: identityProvider,
         item: data,
       },
     };
@@ -31,7 +34,7 @@ const UpdatePerson = () => {
     });
 
     const result = await res.json();
-    console.table(result.data.updatePerson);
+    console.table(result.data.updateUser);
   };
   return (
     <button type="button" onClick={() => update()}>

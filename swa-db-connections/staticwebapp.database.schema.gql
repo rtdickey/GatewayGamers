@@ -8,7 +8,8 @@ type Book @model {
   title: String
 }
 """
-type Person @model {
+type User @model {
   id: ID
-  Name: String
+  userDetails: String
+  identityProvider: String
 }

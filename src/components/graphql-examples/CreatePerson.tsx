@@ -2,14 +2,16 @@ const CreatePerson = () => {
   const create = async () => {
     const data = {
       id: "2",
-      Name: "Ryan",
+      userDetails: "rtdickey",
+      identityProvider: "google",
     };
 
     const gql = `
-            mutation create($item: CreatePersonInput!) {
-            createPerson(item: $item) {
+            mutation create($item: CreateUserInput!) {
+            createUser(item: $item) {
                 id
-                Name
+                userDetails
+                identityProvider
             }
         }`;
 

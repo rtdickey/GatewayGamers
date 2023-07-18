@@ -26,8 +26,8 @@
     }
   },
   "entities": {
-    "Person": {
-      "source": "MyTestPersonContainer",
+    "User": {
+      "source": "Users",
       "permissions": [
         {
           "actions": ["*"],

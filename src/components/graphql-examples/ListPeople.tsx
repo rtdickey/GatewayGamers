@@ -2,10 +2,11 @@ const ListPeople = () => {
   const list = async function () {
     const query = `
             {
-              people {
+              users {
                 items {
                   id
-                  Name
+                  userDetails
+                  identityProvider
                 }
               }
             }`;
@@ -18,7 +19,7 @@ const ListPeople = () => {
         body: JSON.stringify({ query: query }),
       })
     ).json();
-    console.table(result.data.people.items);
+    console.table(result.data.users.items);
   };
 
   return (
