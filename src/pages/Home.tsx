@@ -1,3 +1,4 @@
+import { Col, Row } from "react-bootstrap";
 import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
 
 const Home = () => {
@@ -8,7 +9,20 @@ const Home = () => {
         We are a local game group, who gets together monthly and learn, teach,
         and play many games!
       </p>
-      <HotGamesListGroup />
+      <div>
+        <Row>
+          <Col>
+            <HotGamesListGroup />
+          </Col>
+          {/* <Col>
+            <ListPeople />
+            <CreatePerson />
+            <GetPerson />
+            <UpdatePerson />
+            <DeletePerson />
+          </Col> */}
+        </Row>
+      </div>
     </>
   );
 };

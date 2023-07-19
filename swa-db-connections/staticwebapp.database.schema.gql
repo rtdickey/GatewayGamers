@@ -1,0 +1,15 @@
+"""
+Add your CosmosDB NoSQL database schema in this file
+
+For example:
+
+type Book @model {
+  id: ID
+  title: String
+}
+"""
+type User @model {
+  id: ID
+  userDetails: String
+  identityProvider: String
+}
