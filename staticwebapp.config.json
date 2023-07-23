@@ -3,7 +3,20 @@
     "routes": [{
         "route": "/logout",
         "redirect": "/.auth/logout?post_logout_redirect_uri=/"
-    }],
+    },
+    {
+        "route": "/api/hot",
+        "allowedRoles": ["anonymous"]
+    },
+    {
+        "route": "/api/*",
+        "allowedRoles": ["authenticated"]
+    },
+    {
+        "route": "/data-api/*",
+        "allowedRoles": ["authenticated"]
+    }
+],
     "navigationFallback": {
         "rewrite": "/index.html"
     }
