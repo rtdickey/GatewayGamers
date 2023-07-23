@@ -7,6 +7,7 @@
       "dataApiLocation": "swa-db-connections",
       "outputLocation": "build",
       "appBuildCommand": "npm run build",
+      "apiBuildCommand": "npm start",
       "run": "npm start",
       "appDevserverUrl": "http://localhost:3000"
     }
