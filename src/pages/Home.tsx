@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
 import LoginOptions from "../components/Login";
 import { useAppSelector } from "../hooks/redux";
