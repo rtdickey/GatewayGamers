@@ -29,9 +29,12 @@ const HotGamesListGroup = () => {
                   </span>
                 </ListGroup.Item>
               ) : isLoading ? (
-                <ListGroup.Item>
+                <ListGroup.Item
+                  style={{ backgroundColor: "inherit" }}
+                  className="pb-4"
+                >
                   <span className="font-italic">
-                    Searching Hottest Games...
+                    Loading hottest games from Board Game Geek...
                   </span>
                 </ListGroup.Item>
               ) : data ? (
