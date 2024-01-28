@@ -54,15 +54,17 @@
     margin: 0px 30px 20px 0px;
 
     img {
-      /* width: 200px; */
       height: 200px;
       margin-bottom: 10px;
       float: none !important;
+      margin: 0 auto;
     }
 
     p {
       font-size: 1.3rem;
       color: #333;
+      max-width: 200px !important;
+      word-wrap: break-word;
     }
 
     /* a {

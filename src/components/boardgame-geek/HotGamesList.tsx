@@ -1,70 +1,72 @@
-import { Row, Col, Container, ListGroup } from "react-bootstrap";
+import { Row, Col, Container, ListGroup, Fade } from "react-bootstrap";
 import { useGetHotnessQuery } from "../../redux/services/getHotness";
 import { HotResponse } from "../../interfaces/BoardGameGeekAPI";
 import "./HotGamesList.css";
+import { useEffect, useState } from "react";
 
 const HotGamesListGroup = () => {
+  const [show, setShow] = useState(false);
   const { data, error, isLoading } = useGetHotnessQuery();
+
+  useEffect(() => {
+    setShow(!isLoading);
+  }, [isLoading]);
   return (
-    <Container fluid className="bg-primary-alt px-3 pt-3">
-      <Container>
-        <Row className="pb-3">
-          <Col>
-            <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-              Trending Games
-            </span>
-            <br />
-            <span style={{ fontSize: "16px", fontWeight: "bold" }}>
-              Most active Board Game Geek
-            </span>
-          </Col>
-        </Row>
-        <Row className="game__list">
-          <Col className="content">
-            <ListGroup horizontal variant="flush">
-              {error ? (
-                <ListGroup.Item>
-                  <span className="text-danger font-italic">
-                    Error while retrieving games.
-                  </span>
-                </ListGroup.Item>
-              ) : isLoading ? (
-                <ListGroup.Item
-                  style={{ backgroundColor: "inherit" }}
-                  className="pb-4"
-                >
-                  <span className="font-italic">
-                    Loading hottest games from Board Game Geek...
-                  </span>
-                </ListGroup.Item>
-              ) : data ? (
-                data.map((game: HotResponse) => (
+    <Fade in={show}>
+      <Container fluid className="bg-primary-alt px-3 pt-3">
+        <Container>
+          <Row className="pb-3">
+            <Col>
+              <span style={{ fontSize: "24px", fontWeight: "bold" }}>
+                Trending Games
+              </span>
+              <br />
+              <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+                Most active Board Game Geek
+              </span>
+            </Col>
+          </Row>
+          <Row className="game__list">
+            <Col className="content">
+              <ListGroup horizontal variant="flush">
+                {error ? (
                   <ListGroup.Item
-                    key={game.id}
-                    style={{ backgroundColor: "inherit", border: 0 }}
+                    style={{ backgroundColor: "inherit" }}
+                    className="pb-4"
                   >
-                    <Container>
-                      <div className="media">
-                        <img
-                          src={game.thumbnail.value}
-                          alt={game.name.value + " game"}
-                          className="float-start me-2"
-                        />
-                        <p>
-                          {game.name.value}
-                          <br />
-                          published: {game.yearpublished.value}
-                        </p>
-                      </div>
-                    </Container>
+                    <span className="text-danger font-italic">
+                      Error while retrieving games.
+                    </span>
                   </ListGroup.Item>
-                ))
-              ) : null}
-            </ListGroup>
-          </Col>
-        </Row>
+                ) : data ? (
+                  data.map((game: HotResponse) => (
+                    <ListGroup.Item
+                      key={game.id}
+                      style={{ backgroundColor: "inherit", border: 0 }}
+                    >
+                      <Container>
+                        <div className="media">
+                          <img
+                            src={game.thumbnail.value}
+                            alt={game.name.value + " game"}
+                            className="float-start me-2"
+                          />
+                          <p>
+                            {game.name.value}
+                            <br />
+                            published: {game.yearpublished.value}
+                          </p>
+                        </div>
+                      </Container>
+                    </ListGroup.Item>
+                  ))
+                ) : null}
+              </ListGroup>
+            </Col>
+          </Row>
+        </Container>
       </Container>
-    </Container>
+    </Fade>
   );
 };
 
