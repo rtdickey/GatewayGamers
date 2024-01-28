@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout, Home, About, Login, Dashboard, Profile } from "./pages";
+import { Layout, Home, About, Dashboard, Profile } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuthenticate } from "./hooks/useAuthenticate";
 import { ClientPrincipalData } from "./interfaces/Authentication";
