@@ -13,25 +13,28 @@ const Home = () => {
               justifyContent: "center",
             }}
           >
-            <img
-              src="/logo512.png"
-              alt="Gateway Gamers logo"
-              style={{ maxHeight: "300px" }}
-              className="float-start me-4"
-            />
-            <p style={{ lineHeight: "35pt" }}>
-              <span style={{ fontSize: "6rem", fontWeight: "bold" }}>
-                Welcome!
-              </span>
-              <br />
-              <span style={{ fontSize: "3rem", fontWeight: "bold" }}>
-                To Gateway Gamers
-              </span>
-              <br />
-              <span style={{ fontSize: "2rem" }}>
-                Your virtual boardgame storage!
-              </span>
-            </p>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img
+                src="/logo512.png"
+                alt="Gateway Gamers logo"
+                style={{ maxHeight: "300px" }}
+                className="flex-row me-4"
+              />
+
+              <p style={{ display: "inline-block", lineHeight: "35pt" }}>
+                <span style={{ fontSize: "6rem", fontWeight: "bold" }}>
+                  Welcome!
+                </span>
+                <br />
+                <span style={{ fontSize: "3rem", fontWeight: "bold" }}>
+                  To Gateway Gamers
+                </span>
+                <br />
+                <span style={{ fontSize: "2rem" }}>
+                  Your virtual boardgame storage!
+                </span>
+              </p>
+            </div>
           </Col>
         </Row>
       </Container>

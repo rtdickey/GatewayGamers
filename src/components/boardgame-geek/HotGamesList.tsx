@@ -17,11 +17,11 @@ const HotGamesListGroup = () => {
         <Container>
           <Row className="pb-3">
             <Col>
-              <span style={{ fontSize: "24px", fontWeight: "bold" }}>
+              <span style={{ fontSize: "1.7rem", fontWeight: "bold" }}>
                 Trending Games
               </span>
               <br />
-              <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+              <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>
                 Most active Board Game Geek
               </span>
             </Col>
