@@ -14,21 +14,8 @@ const Home = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <HotGamesListGroup />
-          </Col>
-          {/* <Col>
-            <ListPeople />
-            <CreatePerson />
-            <GetPerson />
-            <UpdatePerson />
-            <DeletePerson />
-          </Col> */}
-        </Row>
       </Container>
-      <div className="container"></div>
-      <div></div>
+      <HotGamesListGroup />
     </>
   );
 };

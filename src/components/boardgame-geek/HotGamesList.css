@@ -1,0 +1,75 @@
+.game__list {
+  margin-top: 25px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: -12%;
+    bottom: 15px;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      #ff9401 85%,
+      rgba(255, 255, 255, 0)
+    );
+    width: 15%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 15px;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      #ff9401 85%
+    );
+    width: 15%;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+
+  .content {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .media {
+    display: inline-block;
+    margin: 0px 30px 20px 0px;
+
+    img {
+      /* width: 200px; */
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    /* a {
+      &:hover, &:focus, &:active {
+        color: #333;
+        text-decoration: none;
+      }
+    } */
+  }
+}
