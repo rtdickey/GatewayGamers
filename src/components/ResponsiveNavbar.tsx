@@ -13,9 +13,6 @@ function ResponsiveNavbar() {
         <Navbar.Toggle aria-controls="navbar-toggle" />
         <Navbar.Collapse id="navbar-toggle" role="">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
-            </Nav.Link>
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
@@ -27,7 +24,7 @@ function ResponsiveNavbar() {
           </Nav>
           <Nav>
             {!isAuthenticated && (
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link as={Link} to="/">
                 Sign In
               </Nav.Link>
             )}
