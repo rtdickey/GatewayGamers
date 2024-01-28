@@ -28,7 +28,7 @@ function ResponsiveNavbar() {
           <Nav>
             {!isAuthenticated && (
               <Nav.Link as={Link} to="/login">
-                Login
+                Sign In
               </Nav.Link>
             )}
             {isAuthenticated && userName && (
@@ -36,7 +36,7 @@ function ResponsiveNavbar() {
                 {userName}
               </Nav.Link>
             )}
-            {isAuthenticated && <Nav.Link href="/logout">Logout</Nav.Link>}
+            {isAuthenticated && <Nav.Link href="/logout">Sign out</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>

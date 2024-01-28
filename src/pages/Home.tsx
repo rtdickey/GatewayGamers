@@ -1,7 +1,11 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
+import LoginOptions from "../components/Login";
+import { useAppSelector } from "../hooks/redux";
 
 const Home = () => {
+  const user = useAppSelector((state) => state.user.clientPrincipal);
+
   return (
     <>
       <Container>
@@ -13,28 +17,27 @@ const Home = () => {
               justifyContent: "center",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img
-                src="/logo512.png"
-                alt="Gateway Gamers logo"
-                style={{ maxHeight: "300px" }}
-                className="flex-row me-4"
-              />
-
-              <p style={{ display: "inline-block", lineHeight: "35pt" }}>
-                <span style={{ fontSize: "6rem", fontWeight: "bold" }}>
-                  Welcome!
-                </span>
-                <br />
-                <span style={{ fontSize: "3rem", fontWeight: "bold" }}>
-                  To Gateway Gamers
-                </span>
-                <br />
-                <span style={{ fontSize: "2rem" }}>
-                  Your virtual boardgame storage!
-                </span>
-              </p>
-            </div>
+            <Row>
+              <Col>
+                <img
+                  src="/logo512.png"
+                  alt="Gateway Gamers logo"
+                  style={{ maxHeight: "300px" }}
+                  className="flex-row me-4"
+                />
+              </Col>
+              {!user && (
+                <Col
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignContent: "center",
+                  }}
+                >
+                  <LoginOptions />
+                </Col>
+              )}
+            </Row>
           </Col>
         </Row>
       </Container>
