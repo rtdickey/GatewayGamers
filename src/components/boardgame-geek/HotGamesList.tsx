@@ -1,4 +1,4 @@
-import { Row, Col, Container, ListGroup, Fade } from "react-bootstrap";
+import { Row, Col, Container, ListGroup, Fade, Card } from "react-bootstrap";
 import { useGetHotnessQuery } from "../../redux/services/getHotness";
 import { HotResponse } from "../../interfaces/BoardGameGeekAPI";
 import "./HotGamesList.css";
@@ -43,21 +43,37 @@ const HotGamesListGroup = () => {
                     <ListGroup.Item
                       key={game.id}
                       style={{ backgroundColor: "inherit", border: 0 }}
+                      onClick={() =>
+                        window.open(
+                          "https://boardgamegeek.com/boardgame/" + game.id,
+                          "_blank" // <- This is what makes it open in a new window.
+                        )
+                      }
                     >
-                      <Container>
-                        <div className="media">
+                      <Card
+                        className="game__content"
+                        style={{ backgroundColor: "inherit", border: "none" }}
+                      >
+                        <Card.Body>
                           <img
                             src={game.thumbnail.value}
                             alt={game.name.value + " game"}
-                            className="float-start me-2"
+                            className="game__content__header me-2"
                           />
-                          <p>
+                          <p className="pt-2 px-4">
                             {game.name.value}
                             <br />
-                            published: {game.yearpublished.value}
+                            <span
+                              style={{
+                                fontSize: "1rem",
+                                fontStyle: "italic",
+                              }}
+                            >
+                              published: {game.yearpublished.value}
+                            </span>
                           </p>
-                        </div>
-                      </Container>
+                        </Card.Body>
+                      </Card>
                     </ListGroup.Item>
                   ))
                 ) : null}
