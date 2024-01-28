@@ -8,7 +8,7 @@ const HotGamesListGroup = () => {
   return (
     <Container fluid className="bg-primary-alt px-3 pt-3">
       <Container>
-        <Row>
+        <Row className="pb-3">
           <Col>
             <span style={{ fontSize: "24px", fontWeight: "bold" }}>
               Trending Games
