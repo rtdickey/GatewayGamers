@@ -13,7 +13,7 @@ const Footer = () => {
           className="p-2"
         >
           <span>
-            &copy; {getYear()} Ryan Dickey, Kevin Schmidt, and Bryce Postelwait.
+            &copy; {getYear()} Ryan Dickey, Kevin Schmidt, and Bryce Postlewait.
             All Rights Reserved.
           </span>
         </Col>
