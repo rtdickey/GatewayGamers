@@ -5,12 +5,32 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Row>
-          <Col>
-            <h1>Welcome to Gateway Gamers</h1>
-            <p>
-              We are a local game group, who gets together monthly and learn,
-              teach, and play many games!
+        <Row className="m-4">
+          <Col
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="/logo512.png"
+              alt="Gateway Gamers logo"
+              style={{ maxHeight: "300px" }}
+              className="float-start me-4"
+            />
+            <p style={{ lineHeight: "35pt" }}>
+              <span style={{ fontSize: "6rem", fontWeight: "bold" }}>
+                Welcome!
+              </span>
+              <br />
+              <span style={{ fontSize: "3rem", fontWeight: "bold" }}>
+                To Gateway Gamers
+              </span>
+              <br />
+              <span style={{ fontSize: "2rem" }}>
+                Your virtual boardgame storage!
+              </span>
             </p>
           </Col>
         </Row>
