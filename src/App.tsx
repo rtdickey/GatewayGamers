@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout, Home, About, BoardGameKeep, Profile } from "./pages";
+import { Layout, Home, BoardGameKeep, Profile } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuthenticate } from "./hooks/useAuthenticate";
 import { ClientPrincipalData } from "./interfaces/Authentication";
@@ -22,7 +22,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
           <Route
             path="boardgamekeep"
             element={

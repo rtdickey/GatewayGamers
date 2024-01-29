@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
 import LoginOptions from "../components/Login";
 import { useAppSelector } from "../hooks/redux";
+import About from "../components/About";
 
 const Home = () => {
   const user = useAppSelector((state) => state.user.clientPrincipal);
@@ -42,6 +43,7 @@ const Home = () => {
         </Row>
       </Container>
       <HotGamesListGroup />
+      <About />
     </>
   );
 };
