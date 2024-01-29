@@ -1,6 +1,6 @@
 import About from "./About";
-import Dashboard from "./protected/Dashboard";
+import BoardGameKeep from "./protected/BoardGameKeep";
 import Home from "./Home";
 import Layout from "./Layout";
 import Profile from "./protected/Profile";
-export { About, Dashboard, Home, Layout, Profile };
+export { About, BoardGameKeep, Home, Layout, Profile };

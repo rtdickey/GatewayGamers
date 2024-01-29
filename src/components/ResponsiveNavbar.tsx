@@ -17,8 +17,8 @@ function ResponsiveNavbar() {
               About
             </Nav.Link>
             {isAuthenticated && (
-              <Nav.Link as={Link} to="/dashboard">
-                Dashboard
+              <Nav.Link as={Link} to="/boardgamekeep">
+                Game Keep
               </Nav.Link>
             )}
           </Nav>

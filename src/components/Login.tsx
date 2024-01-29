@@ -11,7 +11,7 @@ const LoginOptions = () => {
         variant="outline-primary"
         size="lg"
         as="a"
-        href="/.auth/login/github?post_login_redirect_uri=/dashboard"
+        href="/.auth/login/github?post_login_redirect_uri=/boardgamekeep"
         className="border-0"
       >
         <FaGithub size={20}></FaGithub> Login with Github
@@ -20,7 +20,7 @@ const LoginOptions = () => {
         variant="outline-primary"
         size="lg"
         as="a"
-        href="/.auth/login/twitter?post_login_redirect_uri=/dashboard"
+        href="/.auth/login/twitter?post_login_redirect_uri=/boardgamekeep"
         className="border-0"
       >
         <FaTwitter /> Login with Twitter
