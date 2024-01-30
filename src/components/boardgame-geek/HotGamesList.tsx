@@ -1,8 +1,8 @@
 import { Row, Col, Container, ListGroup, Card } from "react-bootstrap";
 import { useGetHotnessQuery } from "../../redux/services/getHotness";
 import { HotResponse } from "../../interfaces/BoardGameGeekAPI";
-import "./HotGamesList.css";
 import Skeleton from "react-loading-skeleton";
+import "./HotGamesList.css";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const HotGamesListGroup = () => {
