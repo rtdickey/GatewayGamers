@@ -1,0 +1,13 @@
+.layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    .main-content {
+        //padding: 1.5rem;
+        overflow: auto;
+        flex-grow: 1;
+    }
+}

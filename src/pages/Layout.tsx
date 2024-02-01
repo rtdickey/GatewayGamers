@@ -3,13 +3,19 @@ import ResponsiveNavbar from "../components/ResponsiveNavbar";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 
+import "./Layout.scss";
+
 const Layout = () => {
   return (
     <>
-      <ResponsiveNavbar />
-      <Banner />
-      <Outlet />
-      <Footer />
+      <div className="layout">
+        <ResponsiveNavbar />
+        <Banner />
+        <div className="main-content">
+          <Outlet />
+          <Footer />
+        </div>
+      </div>
     </>
   );
 };

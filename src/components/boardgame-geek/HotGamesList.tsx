@@ -2,17 +2,17 @@ import { Row, Col, Container, ListGroup, Card } from "react-bootstrap";
 import { useGetHotnessQuery } from "../../redux/services/getHotness";
 import { HotResponse } from "../../interfaces/BoardGameGeekAPI";
 import Skeleton from "react-loading-skeleton";
-import "./HotGamesList.css";
+import "./HotGamesList.scss";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const HotGamesListGroup = () => {
+const HotGamesList = () => {
   const { data, error, isLoading } = useGetHotnessQuery();
   return (
     <>
       {isLoading ? (
         <Skeleton height={374} />
       ) : (
-        <Container fluid className="bg-primary-alt px-3 pt-3">
+        <Container fluid className="bg-white px-3 pt-3">
           <Container>
             <Row className="pb-3">
               <Col>
@@ -38,7 +38,7 @@ const HotGamesListGroup = () => {
                       </span>
                     </ListGroup.Item>
                   ) : data ? (
-                    data.map((game: HotResponse) => (
+                    data.map((game: HotResponse, index: number) => (
                       <ListGroup.Item
                         key={game.id}
                         style={{ backgroundColor: "inherit", border: 0 }}
@@ -63,7 +63,9 @@ const HotGamesListGroup = () => {
                               className="game__content__header me-2"
                             />
                             <p className="pt-2 px-4">
-                              {game.name.value}
+                              <span>
+                                <b>{index + 1}.</b> {game.name.value}
+                              </span>
                               <br />
                               <span
                                 style={{
@@ -89,4 +91,4 @@ const HotGamesListGroup = () => {
   );
 };
 
-export default HotGamesListGroup;
+export default HotGamesList;

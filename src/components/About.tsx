@@ -1,5 +1,7 @@
 import { Container } from "react-bootstrap";
+import { FaDiceOne, FaDiceTwo, FaDiceThree, FaDiceFour } from "react-icons/fa6";
 
+import "./About.scss";
 const About = () => {
   return (
     <Container style={{ fontSize: "1.3rem", lineHeight: "30pt" }}>
@@ -29,28 +31,38 @@ const About = () => {
       </p>
       <h2 className="mt-4">Key Features:</h2>
       <dl>
-        <dt>Game Shelves</dt>
+        <dt>
+          <FaDiceOne size={32} className="dice-counter-list" /> Game Shelves
+        </dt>
         <dd>
           Easily categorize your board games into "Owned," "Want to Play," and
           "Not Interested" shelves. Keep your collection organized and
           prioritize the games that matter most to you.
         </dd>
 
-        <dt>Loan Tracker</dt>
+        <dt>
+          <FaDiceTwo size={32} className="dice-counter-list" /> Loan Tracker
+        </dt>
         <dd>
           Never lose track of your borrowed board games again. Board Game Keep
           lets you record when you loaned out a game, to whom, and serves as a
           reminder to ensure your beloved games find their way back home.
         </dd>
 
-        <dt>Intuitive Interface</dt>
+        <dt>
+          <FaDiceThree size={32} className="dice-counter-list" /> Intuitive
+          Interface
+        </dt>
         <dd>
           Our user-friendly interface ensures a seamless experience, making it
           simple for you to navigate and manage your board game library. Spend
           less time organizing and more time enjoying your games.
         </dd>
 
-        <dt>Customizable Collections</dt>
+        <dt>
+          <FaDiceFour size={32} className="dice-counter-list" /> Customizable
+          Collections
+        </dt>
         <dd>
           Tailor your shelves to fit your unique gaming preferences. Whether you
           have a penchant for strategy games, party games, or a mix of both,

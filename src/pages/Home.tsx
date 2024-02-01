@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import HotGamesListGroup from "../components/boardgame-geek/HotGamesList";
+import HotGamesList from "../components/boardgame-geek/HotGamesList";
 import LoginOptions from "../components/Login";
 import { useAppSelector } from "../hooks/redux";
 import About from "../components/About";
@@ -42,7 +42,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <HotGamesListGroup />
+      <HotGamesList />
       <About />
     </>
   );
