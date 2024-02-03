@@ -64,8 +64,8 @@ const BGKSidebar = ({ handleShelfSelect }: BGKSidebarProps) => {
             <SubMenu
               key={index}
               label={shelf.name + " (" + shelf.numberOfItems + ")"}
-              onSubmit={() => handleShelfSelect(shelf.id)}
             >
+              <MenuItem onClick={() => handleShelfSelect(null)}>All</MenuItem>
               {shelf.categories.map((category: Category, catIndex) => (
                 <MenuItem key={catIndex}>
                   {category.name + " (" + category.numberOfItems + ")"}
@@ -73,7 +73,7 @@ const BGKSidebar = ({ handleShelfSelect }: BGKSidebarProps) => {
               ))}
             </SubMenu>
           ) : (
-            <MenuItem key={index} onSubmit={() => handleShelfSelect(shelf.id)}>
+            <MenuItem key={index} onClick={() => handleShelfSelect(shelf.id)}>
               {shelf.name + " (" + shelf.numberOfItems + ")"}
             </MenuItem>
           )
