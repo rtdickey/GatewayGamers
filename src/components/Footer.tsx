@@ -6,7 +6,7 @@ const getYear = () => {
 
 const Footer = () => {
   return (
-    <Container fluid>
+    <Container fluid className="border-top">
       <Row>
         <Col
           style={{ display: "flex", justifyContent: "center" }}

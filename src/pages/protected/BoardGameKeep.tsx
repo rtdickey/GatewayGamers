@@ -1,20 +1,19 @@
 import { Col, Row } from "react-bootstrap";
 import GameSearch from "../../components/boardgame-geek/GameSearch";
-import ClosetMenu from "../../components/ClosetMenu";
+import BGKSidebar from "../../components/boardgame-keep/BGKSidebar";
 
 const BoardGameKeep = () => {
   return (
-    <>
-      <Row>
-        <Col sm={3}>
-          <ClosetMenu />
-        </Col>
-        <Col sm={6}>
-          <GameSearch />
-        </Col>
-        <Col sm={3}></Col>
-      </Row>
-    </>
+    <div style={{ display: "flex", height: "100%", minHeight: "400px" }}>
+      <BGKSidebar />
+      <div className="p-4 pt-0">
+        <Row>
+          <Col>
+            <GameSearch />
+          </Col>
+        </Row>
+      </div>
+    </div>
   );
 };
 
