@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Sidebar, Menu, SubMenu, MenuItem } from "react-pro-sidebar";
 
 interface Category {
@@ -13,7 +14,11 @@ interface Shelf {
   numberOfItems: number;
 }
 
-const BGKSidebar = () => {
+interface BGKSidebarProps {
+  handleShelfSelect: (shelfId: string) => void;
+}
+
+const BGKSidebar = ({ handleShelfSelect }: BGKSidebarProps) => {
   const shelves: Shelf[] = [
     {
       id: "1",
@@ -52,13 +57,14 @@ const BGKSidebar = () => {
   ];
 
   return (
-    <Sidebar>
+    <Sidebar breakPoint="sm">
       <Menu>
         {shelves.map((shelf: Shelf, index: number) =>
           shelf.numberOfItems > 0 ? (
             <SubMenu
               key={index}
               label={shelf.name + " (" + shelf.numberOfItems + ")"}
+              onSubmit={() => handleShelfSelect(shelf.id)}
             >
               {shelf.categories.map((category: Category, catIndex) => (
                 <MenuItem key={catIndex}>
@@ -67,7 +73,7 @@ const BGKSidebar = () => {
               ))}
             </SubMenu>
           ) : (
-            <MenuItem key={index}>
+            <MenuItem key={index} onSubmit={() => handleShelfSelect(shelf.id)}>
               {shelf.name + " (" + shelf.numberOfItems + ")"}
             </MenuItem>
           )
