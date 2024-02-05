@@ -53,13 +53,13 @@
     transition: transform 0.4s;
 
     .game__content__header {
-      max-height: 150px;
+      height: 150px;
       overflow: hidden;
+      border-radius: 2em;
     }
 
     img {
       width: 100%;
-      border-radius: 2em;
       object-fit: cover;
     }
   }
