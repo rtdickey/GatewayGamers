@@ -58,13 +58,13 @@ const HotGamesList = () => {
                         >
                           <Card.Body>
                             <img
-                              src={game.thumbnail.value}
-                              alt={game.name.value + " game"}
+                              src={game.thumbnail?.value}
+                              alt={game.name?.value + " game"}
                               className="game__content__header me-2"
                             />
                             <p className="pt-2 px-4">
                               <span>
-                                <b>{index + 1}.</b> {game.name.value}
+                                <b>{index + 1}.</b> {game.name?.value}
                               </span>
                               <br />
                               <span
@@ -73,7 +73,7 @@ const HotGamesList = () => {
                                   fontStyle: "italic",
                                 }}
                               >
-                                published: {game.yearpublished.value}
+                                published: {game.yearpublished?.value}
                               </span>
                             </p>
                           </Card.Body>
