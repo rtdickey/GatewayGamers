@@ -5,10 +5,14 @@ import Shelf from "../../components/boardgame-keep/Shelf";
 import { useState } from "react";
 
 const BoardGameKeep = () => {
-  const [activeShelf, setActiveShelf] = useState("1");
+  const [activeShelf, setActiveShelf] = useState<string>("1");
+  const [activeCategory, setActiveCategory] = useState<string>(null);
 
-  const handleShelfSelect = (shelfId: string) => {
+  const handleShelfSelect = (shelfId: string, categoryId?: string) => {
+    console.log("Shelf Id: ", shelfId);
+    console.log("Category Id: ", categoryId);
     setActiveShelf(shelfId);
+    setActiveCategory(categoryId);
   };
 
   return (
@@ -18,7 +22,7 @@ const BoardGameKeep = () => {
         <Row>
           <Col>
             <GameSearch />
-            <Shelf id={activeShelf} />
+            <Shelf id={activeShelf} categoryId={activeCategory} />
           </Col>
         </Row>
       </div>

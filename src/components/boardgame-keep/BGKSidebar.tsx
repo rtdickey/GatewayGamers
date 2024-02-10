@@ -3,7 +3,7 @@ import { Category, Shelf } from "../../interfaces/GameShelf";
 import { useGetTemporaryShelf } from "../../hooks/useTemporaryDataStore";
 
 interface BGKSidebarProps {
-  handleShelfSelect: (shelfId: string) => void;
+  handleShelfSelect: (shelfId: string, categoryId?: string) => void;
 }
 
 const BGKSidebar = ({ handleShelfSelect }: BGKSidebarProps) => {
@@ -17,9 +17,14 @@ const BGKSidebar = ({ handleShelfSelect }: BGKSidebarProps) => {
               key={index}
               label={shelf.name + " (" + shelf.numberOfItems + ")"}
             >
-              <MenuItem onClick={() => handleShelfSelect(null)}>All</MenuItem>
+              <MenuItem onClick={() => handleShelfSelect(shelf.id)}>
+                All
+              </MenuItem>
               {shelf.categories.map((category: Category, catIndex) => (
-                <MenuItem key={catIndex}>
+                <MenuItem
+                  key={catIndex}
+                  onClick={() => handleShelfSelect(shelf.id, category.id)}
+                >
                   {category.name + " (" + category.numberOfItems + ")"}
                 </MenuItem>
               ))}
