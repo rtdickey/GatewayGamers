@@ -6,14 +6,14 @@ interface ShelfProps {
   categoryId?: string | null;
 }
 
-interface GameDetails {
-  boxArt: string;
-  title: string;
-  ratings: string;
-  borrowedStatus: string;
-  dateAdded: string;
-  shelf: string;
-}
+// interface GameDetails {
+//   boxArt: string;
+//   title: string;
+//   ratings: string;
+//   borrowedStatus: string;
+//   dateAdded: string;
+//   shelf: string;
+// }
 
 const Shelf = ({ id, categoryId = null }: ShelfProps) => {
   const games = [] as Array<string>;
