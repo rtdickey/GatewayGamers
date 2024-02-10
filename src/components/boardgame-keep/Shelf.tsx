@@ -1,26 +1,22 @@
 import { Col, Row } from "react-bootstrap";
 import Game from "./Game";
+import useGetGameCloset from "../../hooks/useTemporaryGameDataStore";
 
 interface ShelfProps {
   id: string;
   categoryId?: string | null;
 }
 
-// interface GameDetails {
-//   boxArt: string;
-//   title: string;
-//   ratings: string;
-//   borrowedStatus: string;
-//   dateAdded: string;
-//   shelf: string;
-// }
-
 const Shelf = ({ id, categoryId = null }: ShelfProps) => {
-  const games = [] as Array<string>;
+  const games = useGetGameCloset();
+  const actualShelf = categoryId ? `${id}-${categoryId}` : id;
+  const filteredGames = games.filter((arr) =>
+    categoryId ? arr.shelf === actualShelf : arr.shelf.startsWith(id)
+  );
+
   return (
     <>
-      Shelf Id: {id}
-      {categoryId?.length && `-${categoryId}`}
+      Shelf Id: {actualShelf}
       <div>
         <Row>
           <Col>Box Art</Col>
@@ -30,8 +26,8 @@ const Shelf = ({ id, categoryId = null }: ShelfProps) => {
           <Col>Date Added</Col>
           <Col>Shelf</Col>
         </Row>
-        {games.map((game, index) => (
-          <Game />
+        {filteredGames.map((game, index) => (
+          <Game key={index} details={game} />
         ))}
       </div>
     </>
