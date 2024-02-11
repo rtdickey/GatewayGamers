@@ -57,7 +57,6 @@ export interface DetailedGameSearchResponse {
     value: string;
   };
   link: DetailedGameLink[];
-  publisher;
 }
 
 export interface HotResponse {
