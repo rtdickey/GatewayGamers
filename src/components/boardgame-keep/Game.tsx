@@ -10,7 +10,9 @@ import {
 } from "react-icons/fa6";
 
 const Game = ({ details, className }: GameDetails) => {
-  const { data: game } = useSearchDetailedGameInfoByIdsQuery("68448");
+  const { data: game, isLoading } = useSearchDetailedGameInfoByIdsQuery(
+    details.id
+  );
 
   const getBoardGameName = () => {
     return game.name.filter((n) => n.type === "primary")[0].value;
@@ -30,7 +32,7 @@ const Game = ({ details, className }: GameDetails) => {
 
   return (
     <>
-      {game && (
+      {!isLoading && game && (
         <Row style={{ fontSize: ".8rem" }} className={className}>
           <Col>
             <img src={game.thumbnail} alt={game.name + " game"} width={100} />

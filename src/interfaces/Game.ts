@@ -1,4 +1,5 @@
 export interface GameInfo {
+  id: string;
   boxArt: string;
   title: string;
   ratings: string;

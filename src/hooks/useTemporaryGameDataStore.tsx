@@ -4,6 +4,7 @@ import { GameInfo } from "../interfaces/Game";
 const useGetGameCloset = () => {
   const games = [
     {
+      id: "68448",
       boxArt: "Image 1",
       title: "Title 1",
       ratings: "Ratings 1",
@@ -12,6 +13,7 @@ const useGetGameCloset = () => {
       shelf: "1-3",
     },
     {
+      id: "342070",
       boxArt: "Image 2",
       title: "Title 2",
       ratings: "Ratings 2",
@@ -20,6 +22,7 @@ const useGetGameCloset = () => {
       shelf: "3",
     },
     {
+      id: "400314",
       boxArt: "Image 3",
       title: "Title 3",
       ratings: "Ratings 3",
@@ -28,6 +31,7 @@ const useGetGameCloset = () => {
       shelf: "1-3",
     },
     {
+      id: "266192",
       boxArt: "Image 4",
       title: "Title 4",
       ratings: "Ratings 4",
@@ -36,6 +40,7 @@ const useGetGameCloset = () => {
       shelf: "1-2",
     },
     {
+      id: "295947",
       boxArt: "Image 5",
       title: "Title 5",
       ratings: "Ratings 5",
@@ -44,6 +49,7 @@ const useGetGameCloset = () => {
       shelf: "2",
     },
     {
+      id: "342942",
       boxArt: "Image 6",
       title: "Title 6",
       ratings: "Ratings 6",
@@ -52,6 +58,7 @@ const useGetGameCloset = () => {
       shelf: "1-1",
     },
     {
+      id: "410201",
       boxArt: "Image 3",
       title: "Title 3",
       ratings: "Ratings 3",
