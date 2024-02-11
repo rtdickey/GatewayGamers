@@ -1,4 +1,4 @@
-import { GameInfo } from "../components/boardgame-keep/Game";
+import { GameInfo } from "../interfaces/Game";
 
 //Delete this file later when database works.
 const useGetGameCloset = () => {

@@ -17,12 +17,20 @@ export interface GameSearchResponse {
   type: string;
 }
 
+export interface DetailedGameName {
+  type: string;
+  value: string;
+}
+
+export interface DetailedGameLink {
+  type: string;
+  id: string;
+  value: string;
+}
+
 export interface DetailedGameSearchResponse {
   id: string;
-  name: {
-    type: string;
-    value: string;
-  };
+  name: DetailedGameName[];
   yearPublished: {
     value: string;
   };
@@ -30,8 +38,26 @@ export interface DetailedGameSearchResponse {
   thumbnail: string;
   image: string;
   description: string;
-  minplayers: string;
-  maxplayers: string;
+  minplayers: {
+    value: string;
+  };
+  maxplayers: {
+    value: string;
+  };
+  playingtime: {
+    value: string;
+  };
+  minplaytime: {
+    value: string;
+  };
+  maxplaytime: {
+    value: string;
+  };
+  minage: {
+    value: string;
+  };
+  link: DetailedGameLink[];
+  publisher;
 }
 
 export interface HotResponse {

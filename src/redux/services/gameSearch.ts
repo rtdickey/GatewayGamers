@@ -15,7 +15,7 @@ export const gameSearchAPI = createApi({
       query: (search: string) => `search?search=${search}`,
     }),
     searchDetailedGameInfoByIds: builder.query<
-      DetailedGameSearchResponse[],
+      DetailedGameSearchResponse,
       string
     >({
       query: (gameIds: string) => `thing?id=${gameIds}&type=boardgame`,

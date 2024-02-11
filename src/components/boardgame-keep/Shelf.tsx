@@ -18,7 +18,7 @@ const Shelf = ({ id, categoryId = null }: ShelfProps) => {
     <>
       Shelf Id: {actualShelf}
       <div>
-        <Row>
+        <Row className="fw-bold border-bottom border-primary">
           <Col>Box Art</Col>
           <Col>Title</Col>
           <Col>Ratings</Col>
@@ -26,9 +26,11 @@ const Shelf = ({ id, categoryId = null }: ShelfProps) => {
           <Col>Date Added</Col>
           <Col>Shelf</Col>
         </Row>
-        {filteredGames.map((game, index) => (
-          <Game key={index} details={game} />
-        ))}
+        {filteredGames.map((game, index) => {
+          const classes =
+            filteredGames.length - 1 === index ? "p-3" : "p-3 border-bottom";
+          return <Game key={index} details={game} className={classes} />;
+        })}
       </div>
     </>
   );

@@ -12,8 +12,8 @@ const httpTrigger: AzureFunction = async function (
     attributeNamePrefix: "",
   };
   const parser = new XMLParser(options);
-  const searchParameter = req.query.search;
-  if (!searchParameter) {
+  const idParameter = req.query.id;
+  if (!idParameter) {
     context.res = {
       status: 200,
       body: {},
@@ -21,10 +21,9 @@ const httpTrigger: AzureFunction = async function (
     return;
   }
 
-  // 1543,5256,1542
   const responseXml = await (
     await fetch(
-      `https://api.geekdo.com/xmlapi2/thing?id=${searchParameter}&type=boardgame`
+      `https://api.geekdo.com/xmlapi2/thing?id=${idParameter}&type=boardgame`
     )
   ).text();
   // context.log(responseXml);

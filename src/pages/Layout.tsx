@@ -13,8 +13,8 @@ const Layout = () => {
         <Banner />
         <div className="main-content">
           <Outlet />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </>
   );
