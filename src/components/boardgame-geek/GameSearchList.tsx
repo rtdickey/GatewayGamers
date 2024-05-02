@@ -22,7 +22,6 @@ const GameSearchList = ({ items }: Props) => {
           </button>
         </ListGroupItem>
       ))}
-      ;
     </ListGroup>
   );
 };

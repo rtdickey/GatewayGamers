@@ -9,8 +9,6 @@ const BoardGameKeep = () => {
   const [activeCategory, setActiveCategory] = useState<string>(null);
 
   const handleShelfSelect = (shelfId: string, categoryId?: string) => {
-    console.log("Shelf Id: ", shelfId);
-    console.log("Category Id: ", categoryId);
     setActiveShelf(shelfId);
     setActiveCategory(categoryId);
   };

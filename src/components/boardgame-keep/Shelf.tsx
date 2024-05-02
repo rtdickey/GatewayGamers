@@ -1,6 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import Game from "./Game";
 import useGetGameCloset from "../../hooks/useTemporaryGameDataStore";
+import { useMemo } from "react";
 
 interface ShelfProps {
   id: string;
@@ -9,10 +10,14 @@ interface ShelfProps {
 
 const Shelf = ({ id, categoryId = null }: ShelfProps) => {
   const games = useGetGameCloset();
-  const actualShelf = categoryId ? `${id}-${categoryId}` : id;
-  const filteredGames = games.filter((arr) =>
-    categoryId ? arr.shelf === actualShelf : arr.shelf.startsWith(id)
-  );
+  const actualShelf = useMemo(() => {
+    return categoryId ? `${id}-${categoryId}` : id;
+  }, [categoryId, id]);
+  const filteredGames = useMemo(() => {
+    return games.filter((arr) =>
+      actualShelf !== id ? arr.shelf === actualShelf : arr.shelf.startsWith(id)
+    );
+  }, [actualShelf, games]);
 
   return (
     <>
