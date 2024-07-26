@@ -12,4 +12,5 @@ type User @model {
   id: ID
   userDetails: String
   identityProvider: String
+  userRoles: [String]
 }
