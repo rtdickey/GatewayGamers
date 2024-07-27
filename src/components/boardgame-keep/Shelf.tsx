@@ -17,7 +17,7 @@ const Shelf = ({ id, categoryId = null }: ShelfProps) => {
     return games.filter((arr) =>
       actualShelf !== id ? arr.shelf === actualShelf : arr.shelf.startsWith(id)
     );
-  }, [actualShelf, games]);
+  }, [actualShelf, games, id]);
 
   return (
     <>
