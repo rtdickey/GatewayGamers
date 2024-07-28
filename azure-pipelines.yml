@@ -25,7 +25,6 @@ steps:
     
   - task: AzureStaticWebApp@0
     inputs:
-      workingDirectory: '/'
       app_location: '/'
       output_location: 'build'
       api_location: 'api'
