@@ -23,7 +23,7 @@ const Shelf = ({ id, categoryId = null }: ShelfProps) => {
     <>
       Shelf Id: {actualShelf}
       <div>
-        <Row className="fw-bold border-bottom border-primary test">
+        <Row className="fw-bold border-bottom border-primary">
           <Col>Box Art</Col>
           <Col>Title</Col>
           <Col>Ratings</Col>
