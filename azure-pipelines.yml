@@ -14,8 +14,8 @@ steps:
     submodules: true
   - task: AzureStaticWebApp@0
     inputs:
-      app_location: 'src' # App source code path relative to cwd
-      api_location: 'api' # Api source code path relative to cwd
-      output_location: 'public' # Built app content directory relative to app_location - optional
-      cwd: '$(System.DefaultWorkingDirectory)/myapp' # Working directory - optional
-      azure_static_web_apps_api_token: $(deployment_token)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/myapp'
+      app_location: 'src'
+      output_location: 'public'
+      api_location: 'api'
+      azure_static_web_apps_api_token: '$(deployment-token)'
