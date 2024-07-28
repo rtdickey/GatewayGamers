@@ -14,7 +14,6 @@ steps:
     submodules: true
   - task: AzureStaticWebApp@0
     inputs:
-      workingDirectory: '$(System.DefaultWorkingDirectory)/GatewayGamers'
       app_location: 'src'
       output_location: 'public'
       api_location: 'api'
